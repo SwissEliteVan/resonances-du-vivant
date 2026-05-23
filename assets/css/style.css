@@ -384,15 +384,15 @@ h1 {
 }
 
 .footer-button-whatsapp {
-    border: 1px solid #d4af37;
-    color: #050505;
-    background: #d4af37;
+    border: 1px solid #25D366;
+    color: #ffffff;
+    background: #25D366;
 }
 
 .footer-button-whatsapp:hover,
 .footer-button-whatsapp:focus-visible {
-    background: #b88f2e;
-    border-color: #b88f2e;
+    background: #1faa52;
+    border-color: #1faa52;
 }
 
 @media (max-width: 720px) {
