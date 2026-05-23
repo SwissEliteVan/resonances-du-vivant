@@ -1,31 +1,26 @@
 ﻿<?php
 /**
- * META.PHP - Balises SEO & réseaux sociaux pour Résonances du Vivant
+ * META.PHP - SEO et partage social
  */
 ?>
 <title>Résonances du Vivant | Exposition immersive d'art contemporain à Grandcour</title>
-<meta name="description" content="Résonances du Vivant présente une exposition sensorielle immersive sous lumière UV à la Galerie de Grandcour, avec Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Résonances du Vivant est une exposition immersive sous lumière UV à la Galerie de Grandcour. Vernissage le 19 juin 2026.">
 <link rel="canonical" href="https://www.resonancesduvivant.ch/">
-
 <meta property="og:locale" content="fr_CH">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Résonances du Vivant | Exposition immersive d'art contemporain à Grandcour">
-<meta property="og:description" content="Une soirée qui commence dans la lumière et se termine dans l'obscurité. Vernissage immersif le 19 juin 2026.">
+<meta property="og:description" content="Une soirée qui commence dans la lumière et se termine dans l'obscurité. Vernissage le 19 juin 2026.">
 <meta property="og:url" content="https://www.resonancesduvivant.ch/">
 <meta property="og:site_name" content="Résonances du Vivant">
-<meta property="og:image" content="[https://www.resonancesduvivant.ch/assets/images/hero-share.jpg]">
+<meta property="og:image" content="https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.jpg">
+<meta property="og:image:alt" content="Visuel teaser Résonances du Vivant, exposition immersive sous lumière UV">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Visuel teaser Résonances du Vivant, exposition immersive sous lumière UV">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Résonances du Vivant | Exposition immersive d'art contemporain">
+<meta name="twitter:title" content="Résonances du Vivant | Exposition immersive d'art contemporain à Grandcour">
 <meta name="twitter:description" content="Découvrez l'exposition immersive Résonances du Vivant avec Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
-<meta name="twitter:image" content="[https://www.resonancesduvivant.ch/assets/images/hero-share.jpg]">
-<meta name="twitter:image:alt" content="Visuel teaser de l'exposition Résonances du Vivant">
-<meta name="twitter:site" content="@resonancesduvivant">
-
+<meta name="twitter:image" content="https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.jpg">
+<meta name="twitter:image:alt" content="Visuel teaser Résonances du Vivant, exposition immersive sous lumière UV">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -47,7 +42,7 @@
     }
   },
   "image": [
-    "https://www.resonancesduvivant.ch/assets/images/hero-share.jpg"
+    "https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.jpg"
   ],
   "description": "Une soirée qui commence dans la lumière et se termine dans l'obscurité, avec une expérience immersive sous lumière UV.",
   "organizer": {

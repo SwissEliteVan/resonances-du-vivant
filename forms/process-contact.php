@@ -1,76 +1,111 @@
 ﻿<?php
-// forms/process-contact.php
-session_start();
+/**
+ * PROCESS-CONTACT.PHP - Traitement du formulaire de contact sécurisé
+ */
 
-require_once '../includes/form-config.php';
-require_once '../includes/csrf-token.php';
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
-// Redirection si l'accès n'est pas en POST
+require_once __DIR__ . '/../includes/form-config.php';
+require_once __DIR__ . '/../includes/csrf-token.php';
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: ../index.php");
+    header('Location: ../index.php#contact');
     exit;
 }
 
+$honeypot = trim($_POST['website'] ?? '');
+if ($honeypot !== '') {
+    header('Location: ../index.php#contact');
+    exit;
+}
+
+$name = trim($_POST['name'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$phone = trim($_POST['phone'] ?? '');
+$subject = trim($_POST['subject'] ?? 'Contact site');
+$message = trim($_POST['message'] ?? '');
+$accept = isset($_POST['accept']) ? 1 : 0;
+$token = $_POST['csrf_token'] ?? '';
+
 $errors = [];
 
-// 1. Vérification du Jeton CSRF
-if (!isset($_POST['csrf_token']) || !verify_csrf_token($_POST['csrf_token'])) {
-    $errors['global'] = "Erreur de sécurité (CSRF). Veuillez rafraîchir la page et réessayer.";
+if (!csrf_token_validate($token)) {
+    $errors['general'] = 'Votre session a expiré. Veuillez rafraîchir la page et réessayer.';
 }
 
-// 2. Récupération et nettoyage des données (Sanitization)
-$nom = trim(filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-$telephone = trim(filter_input(INPUT_POST, 'telephone', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$sujet = trim(filter_input(INPUT_POST, 'sujet', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$message = trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$consentement = isset($_POST['consentement']);
-
-// 3. Validation
-if (empty($nom)) {
-    $errors['nom'] = "Le nom est obligatoire.";
-}
-if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors['email'] = "Une adresse e-mail valide est requise.";
-}
-if (empty($message)) {
-    $errors['message'] = "Le message ne peut pas être vide.";
-}
-if (!$consentement) {
-    $errors['consentement'] = "Vous devez accepter le traitement de vos données.";
+if ($name === '') {
+    $errors['name'] = 'Le nom est requis.';
+} elseif (mb_strlen($name) > 100) {
+    $errors['name'] = 'Le nom est trop long.';
 }
 
-// 4. Traitement final
-if (empty($errors)) {
-    // Préparation de l'e-mail pour le serveur Hostinger
-    $to = CONTACT_EMAIL;
-    $mail_subject = CONTACT_SUBJECT_PREFIX . ($sujet ? $sujet : 'Nouveau message');
-    
-    $body = "Nouveau message depuis le site Résonances du Vivant :\n\n";
-    $body .= "Nom : $nom\n";
-    $body .= "E-mail : $email\n";
-    $body .= "Téléphone : $telephone\n";
-    $body .= "Sujet : $sujet\n\n";
-    $body .= "Message :\n$message\n";
-
-    $headers = "From: " . CONTACT_EMAIL . "\r\n"; // Il est préférable d'envoyer depuis le même domaine sur Hostinger pour éviter les spams
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-    // Envoi natif PHP
-    if (mail($to, $mail_subject, $body, $headers)) {
-        // Succès : on vide les jetons et redirige vers la page de remerciement
-        unset($_SESSION['csrf_token']);
-        header("Location: thank-you.php");
-        exit;
-    } else {
-        $errors['global'] = "Une erreur serveur est survenue lors de l'envoi de l'e-mail. Veuillez réessayer plus tard.";
-    }
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors['email'] = 'Veuillez saisir une adresse e-mail valide.';
+} elseif (mb_strlen($email) > 150) {
+    $errors['email'] = 'L’adresse e-mail est trop longue.';
 }
 
-// 5. Gestion de l'échec : on renvoie les erreurs et les données en session
-$_SESSION['form_errors'] = $errors;
-$_SESSION['form_data'] = $_POST;
-header("Location: ../index.php#contact");
+if ($message === '') {
+    $errors['message'] = 'Le message est requis.';
+} elseif (mb_strlen($message) < 10) {
+    $errors['message'] = 'Le message doit contenir au moins 10 caractères.';
+} elseif (mb_strlen($message) > 2000) {
+    $errors['message'] = 'Le message est trop long.';
+}
+
+if (!$accept) {
+    $errors['accept'] = 'Vous devez accepter le traitement des données pour envoyer le message.';
+}
+
+$_SESSION['contact_old'] = [
+    'name' => $name,
+    'email' => $email,
+    'phone' => $phone,
+    'subject' => $subject,
+    'message' => $message,
+    'accept' => $accept,
+];
+
+if (!empty($errors)) {
+    $_SESSION['contact_errors'] = $errors;
+    header('Location: ../index.php#contact');
+    exit;
+}
+
+$cleanName = strip_tags($name);
+$cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+$cleanPhone = strip_tags($phone);
+$cleanSubject = strip_tags($subject);
+$cleanMessage = strip_tags($message);
+
+$recipient = CONTACT_RECIPIENT;
+$mailSubject = CONTACT_SUBJECT_PREFIX . $cleanSubject;
+$mailBody = "Nouveau message depuis le site Résonances du Vivant\r\n\r\n";
+$mailBody .= "Nom : {$cleanName}\r\n";
+$mailBody .= "E-mail : {$cleanEmail}\r\n";
+if ($cleanPhone !== '') {
+    $mailBody .= "Téléphone : {$cleanPhone}\r\n";
+}
+$mailBody .= "Sujet : {$cleanSubject}\r\n\r\n";
+$mailBody .= "Message :\r\n{$cleanMessage}\r\n";
+
+$headers = [
+    'From: ' . CONTACT_FROM_NAME . ' <' . CONTACT_FROM_EMAIL . '>',
+    'Reply-To: ' . $cleanName . ' <' . $cleanEmail . '>',
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8'
+];
+
+$mailSent = contact_send_mail($recipient, $mailSubject, $mailBody, $headers);
+
+if (!$mailSent) {
+    $_SESSION['contact_errors'] = ['general' => 'Impossible d’envoyer votre message pour le moment. Veuillez réessayer plus tard.'];
+    header('Location: ../index.php#contact');
+    exit;
+}
+
+unset($_SESSION['contact_old']);
+header('Location: thank-you.php');
 exit;
-?>

@@ -15,14 +15,14 @@
             </div>
         </section>
 
-        <section class="experience" aria-labelledby="experience-title">
+        <section id="experience" class="experience" aria-labelledby="experience-title">
             <div class="section-inner">
                 <h2 id="experience-title">L'Expérience</h2>
                 <p>Une soirée qui commence dans la lumière et se termine dans l'obscurité. Laissez-vous porter par les vibrations, les tracés et les émotions d'une expérience sensorielle inédite sous lumière UV.</p>
             </div>
         </section>
 
-        <section class="artistes" aria-labelledby="artistes-title">
+        <section id="artistes" class="artistes" aria-labelledby="artistes-title">
             <div class="section-inner">
                 <h2 id="artistes-title">Les Artistes</h2>
                 <div class="artist-grid">
@@ -51,15 +51,16 @@
             </div>
         </section>
 
-        <section class="contact" aria-labelledby="contact-title">
+        <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="section-inner">
                 <h2 id="contact-title">Contact</h2>
-                <p>Pour toute question ou demande de réservation, utilisez le lien de contact ci-dessous.</p>
+                <p>Pour toute demande, remplissez le formulaire sécurisé ci-dessous. Nous reprenons contact rapidement.</p>
                 <?php include __DIR__ . '/forms/contact-form.php'; ?>
             </div>
         </section>
     </main>
 
     <?php include __DIR__ . '/includes/footer.php'; ?>
+    <?php include __DIR__ . '/includes/consent-banner.php'; ?>
 </body>
 </html>
