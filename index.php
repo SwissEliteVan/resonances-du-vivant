@@ -31,20 +31,29 @@
         </section>
 
         <section class="grid-section" aria-labelledby="artists-title">
-            <h2 id="artists-title">Les artistes</h2>
+            <h2 id="artists-title">Les escales du voyage</h2>
             <div class="artist-grid">
-                <div class="artist-card">
-                    <h3>Alain Mouret</h3>
-                    <p>Le Trait</p>
-                </div>
-                <div class="artist-card">
-                    <h3>Sonja Fasel</h3>
-                    <p>L&apos;Émotion</p>
-                </div>
-                <div class="artist-card">
-                    <h3>Alison Rikunali</h3>
-                    <p>L&apos;Invisible</p>
-                </div>
+                <article class="artist-card">
+                    <img src="assets/images/alain-mouret-portrait-exposition.avif" alt="Portrait d'Alain Mouret, thème Le Trait" width="600" height="600" loading="lazy">
+                    <div class="artist-copy">
+                        <h3>Alain Mouret</h3>
+                        <p>Le Trait</p>
+                    </div>
+                </article>
+                <article class="artist-card">
+                    <img src="assets/images/sonja-fasel-portrait-exposition.avif" alt="Portrait de Sonja Fasel, thème L'Emotion" width="600" height="600" loading="lazy">
+                    <div class="artist-copy">
+                        <h3>Sonja Fasel</h3>
+                        <p>L'Emotion</p>
+                    </div>
+                </article>
+                <article class="artist-card">
+                    <img src="assets/images/alison-rikunali-portrait-exposition.avif" alt="Portrait d'Alison Rikunali, thème L'Invisible" width="600" height="600" loading="lazy">
+                    <div class="artist-copy">
+                        <h3>Alison Rikunali</h3>
+                        <p>L'Invisible</p>
+                    </div>
+                </article>
             </div>
         </section>
 
