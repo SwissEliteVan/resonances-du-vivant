@@ -1,21 +1,18 @@
 ﻿<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <?php include __DIR__ . '/meta.php'; ?>
-
+    <meta name="theme-color" content="#050505">
+    <title>Résonances du Vivant | Exposition immersive d'art contemporain</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --bg: #050505;
             --gold: #d4af37;
             --ivory: #f4f4f4;
-            --grey: #9b9b9b;
+            --muted: #9c9c9c;
+            --radius: 1.25rem;
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
         }
@@ -35,32 +32,46 @@
             color: var(--ivory);
             font-family: var(--font-body);
             line-height: 1.75;
-            overflow-x: hidden;
         }
 
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background: radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 35%), radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05), transparent 25%);
-            pointer-events: none;
+            background: radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 30%), radial-gradient(circle at bottom right, rgba(244, 244, 244, 0.04), transparent 25%);
             z-index: -1;
         }
 
-        h1, h2, h3 {
+        img {
+            display: block;
+            max-width: 100%;
+            border-radius: var(--radius);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header.site-header {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
             font-family: var(--font-heading);
-            color: var(--gold);
-            letter-spacing: 0.05em;
-            margin: 0;
+            letter-spacing: 0.2em;
+            font-size: 0.95rem;
+            text-transform: uppercase;
         }
 
-        h2 {
-            font-size: clamp(2rem, 2.5vw, 3rem);
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin: 0;
+        .brand span {
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
         }
 
         .hero {
@@ -75,29 +86,36 @@
         .hero-content {
             max-width: 860px;
             width: 100%;
-            animation: fadeUp 1s ease both;
+            animation: reveal 1s ease both;
         }
 
         .eyebrow {
-            display: inline-flex;
+            display: inline-block;
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            color: var(--muted);
             text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--grey);
+            letter-spacing: 0.3em;
+            font-size: 0.85rem;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 6vw, 5.25rem);
+            line-height: 0.95;
+            margin: 0;
+            letter-spacing: 0.1em;
         }
 
         .subtitle {
             margin: 1.5rem auto 1rem;
-            font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            max-width: 720px;
             color: var(--ivory);
-            max-width: 680px;
         }
 
         .date {
-            margin-bottom: 2.5rem;
-            color: var(--grey);
-            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            color: var(--muted);
         }
 
         .btn-cta {
@@ -105,121 +123,164 @@
             align-items: center;
             justify-content: center;
             padding: 1rem 2rem;
+            border-radius: 999px;
             border: 2px solid var(--gold);
-            background: transparent;
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            text-decoration: none;
-            transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+            font-weight: 700;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
         }
 
         .btn-cta:hover,
         .btn-cta:focus-visible {
             background: var(--gold);
             color: var(--bg);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         main {
-            padding: 4rem 1.5rem 6rem;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .experience,
-        .artistes {
-            max-width: 1200px;
-            margin: 0 auto 4rem;
-            animation: fadeUp 0.9s ease both;
+        .artistes,
+        .contact {
+            padding: 4rem 0;
         }
 
-        .experience p {
-            margin-top: 1rem;
-            font-size: clamp(1rem, 1.1vw, 1.2rem);
+        .experience h2,
+        .artistes h2,
+        .contact h2 {
+            font-size: clamp(2.2rem, 3vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .experience p,
+        .contact p {
             max-width: 780px;
-            margin-left: auto;
-            margin-right: auto;
             color: var(--ivory);
+            font-size: clamp(1rem, 1.1vw, 1.15rem);
+            margin-top: 1rem;
         }
 
-        .grid {
+        .artist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.75rem;
             margin-top: 2rem;
         }
 
-        .artiste-card {
+        .artist-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: var(--radius);
+            overflow: hidden;
             display: grid;
             gap: 1.25rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(212, 175, 55, 0.12);
-            border-radius: 1.5rem;
+            padding: 1rem;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .artiste-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(212, 175, 55, 0.32);
+        .artist-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
-        .artiste-figure {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background: linear-gradient(145deg, rgba(212, 175, 55, 0.15), rgba(244, 244, 244, 0.08));
-            border-radius: 1.25rem;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+        .artist-card div {
+            padding: 0 0.5rem 1rem;
         }
 
-        .artiste-card h3 {
-            font-size: 1.35rem;
+        .artist-card h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
         }
 
-        .theme {
-            color: var(--grey);
-            font-style: italic;
-            letter-spacing: 0.02em;
+        .artist-card p {
+            margin: 0;
+            color: var(--muted);
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+        .contact-card {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.35rem 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius);
         }
 
-        @keyframes fadeUp {
-            0% {
+        .contact-card a {
+            color: var(--gold);
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-card a:hover,
+        .contact-card a:focus-visible {
+            border-bottom-color: var(--gold);
+        }
+
+        footer.site-footer {
+            border-top: 1px solid rgba(212, 175, 55, 0.12);
+            padding: 2rem 0 3rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--muted);
+        }
+
+        .footer-inner p {
+            margin: 0;
+        }
+
+        @keyframes reveal {
+            from {
                 opacity: 0;
-                transform: translateY(24px);
+                transform: translateY(30px);
             }
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 980px) {
+            .artist-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            header.site-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .artist-grid {
+                grid-template-columns: 1fr;
+            }
+
             .hero {
                 padding: 3rem 1rem;
             }
 
-            .experience,
-            .artistes {
-                padding: 3rem 1rem 4rem;
-            }
-
-            .btn-cta {
-                width: 100%;
-                max-width: 320px;
+            .contact-card {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
     </style>
-
-    <?php include __DIR__ . '/analytics.php'; ?>
 </head>
