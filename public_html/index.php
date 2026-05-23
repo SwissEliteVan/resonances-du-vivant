@@ -1,10 +1,3 @@
-<?php
-/**
- * INDEX.PHP - Point d'entrée principal du site
- * Résonances du Vivant - Exposition d'art immersif
- * Galerie de Grandcour, juin-juillet 2026
- */
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php include 'includes/head.php'; ?>
