@@ -38,21 +38,24 @@
                     <img src="assets/images/alain-mouret-portrait-exposition.avif" alt="Portrait d'Alain Mouret, thème Le Trait" width="600" height="600" loading="lazy">
                     <div class="artist-copy">
                         <h3>Alain Mouret</h3>
-                        <p>Le Trait</p>
+                        <p class="artist-theme">Le Trait</p>
+                        <p class="artist-bio">Artiste graphique et dessinateur, Alain Mouret explore la poesie du minimalisme et la force du geste. Son travail se concentre sur l'essence epuree de la ligne, transformant le trait en langage universel. Ses oeuvres interrogent la presence et l'absence, l'espace et le silence.</p>
                     </div>
                 </article>
                 <article class="artist-card">
                     <img src="assets/images/sonja-fasel-portrait-exposition.avif" alt="Portrait de Sonja Fasel, thème L'Emotion" width="600" height="600" loading="lazy">
                     <div class="artist-copy">
                         <h3>Sonja Fasel</h3>
-                        <p>L'Emotion</p>
+                        <p class="artist-theme">L'Emotion</p>
+                        <p class="artist-bio">Therapeute en arts expressifs et artiste visuelle, Sonja Fasel cree un univers poetique ou la couleur devient langage emotionnel. Ses palettes vibrantes et ses compositions dynamiques invitent le spectateur a un voyage interieur, une exploration des sentiments et des resonances de l'ame.</p>
                     </div>
                 </article>
                 <article class="artist-card">
                     <img src="assets/images/alison-rikunali-portrait-exposition.avif" alt="Portrait d'Alison Rikunali, thème L'Invisible" width="600" height="600" loading="lazy">
                     <div class="artist-copy">
                         <h3>Alison Rikunali</h3>
-                        <p>L'Invisible</p>
+                        <p class="artist-theme">L'Invisible</p>
+                        <p class="artist-bio">Therapeute, geobiologue et guerisseuse chamanique basee a La Tour-de-Peilz, Alison Vurpillat Portmann (Rikunali) concoit son art comme un veritable acte d'artivisme. Plongez dans sa clairiere ephemere ou ses Toiles Vibratoires s'illuminent sous la lumiere noire, revelant les trames energetiques de la foret, les animaux totems et les esprits. Une oeuvre de resistance spirituelle et ecologique.</p>
                     </div>
                 </article>
             </div>
@@ -77,6 +80,16 @@
                     <h3>Cloture</h3>
                     <p>Pour cloturer cette presentation, un aperitif vous sera chaleureusement propose.</p>
                 </article>
+            </div>
+        </section>
+
+        <section class="gallery-section" aria-labelledby="gallery-title">
+            <h2 id="gallery-title">La galerie de Grandcour</h2>
+            <div class="gallery-container">
+                <div class="gallery-content">
+                    <p class="gallery-text">Situee a la Rue du Reinz 11 (CH-1543 Grandcour), la Galerie de Grandcour est l'ecrin de cette exposition. Fidele a sa philosophie d'ancrage et de mise en valeur des traces de l'histoire, le maitre des lieux Ueli Affolter vous y accueille pour une experience artistique immersive.</p>
+                    <a class="button button-outline" href="https://www.galerie-grandcour.ch/" target="_blank" rel="noopener">Visiter le site de la Galerie</a>
+                </div>
             </div>
         </section>
 

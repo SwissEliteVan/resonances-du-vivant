@@ -221,6 +221,51 @@ h1 {
     color: #e5e0d8;
 }
 
+.artist-theme {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #d4af37;
+    margin-bottom: 0.75rem;
+}
+
+.artist-bio {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #e5e0d8;
+    margin-top: 0.75rem;
+}
+
+.gallery-section {
+    padding: 2rem 0;
+}
+
+.gallery-section h2 {
+    margin-bottom: 1.5rem;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.gallery-container {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    max-width: 860px;
+}
+
+.gallery-text {
+    margin: 0 0 1.75rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #f4f4f4;
+}
+
+.gallery-container .button {
+    display: inline-flex;
+}
+
 .timeline-section {
     padding: 2rem 0;
 }
