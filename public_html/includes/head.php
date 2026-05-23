@@ -3,7 +3,294 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- Meta Tags SEO et Viewport -->
+        <!-- Meta Tag<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tags will be included by meta.php later, but we keep the structure open -->
+    <title>Résonances du Vivant | Exposition d'Art</title>
+    
+    <!-- Google Fonts Importation -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Style Minimaliste, Luxueux, Mystérieux -->
+    <style>
+        /* Variables de couleur */
+        :root {
+            --color-black-deep: #050505;
+            --color-gold: #d4af37;
+            --color-off-white: #f4f4f4;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-black-deep);
+            color: var(--color-off-white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prévention du scroll horizontal */
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* --- Animations CSS --- */
+        /* Fade in général pour les éléments de contenu */
+        .animated-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* Classe ajoutée par JavaScript/PHP pour révéler l'élément */
+        .animated-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Style du CTA (Call to Action) */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-gold);
+            color: var(--color-black-deep);
+            transform: scale(1.05);
+        }
+
+        /* Grille des artistes (Utilisation de CSS Grid pour flexibilité) */
+        #artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .artist-card {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a0a0a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .artist-image-placeholder {
+            width: 100%;
+            padding-top: 100%; /* Pour maintenir un ratio 1:1 */
+            background-color: #1a1a1a;
+            background-image: url('assets/images/placeholder.jpg'); /* Placeholder */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 2em; }
+            .cta-button { padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body class="animated-content visible">
+    <!-- Le contenu principal sera inclus ici -->    <!-- Meta Tags SEO et Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez Résonances du Vivant, une exposition immersive présentant le travail artistique de Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
+    <meta name="keywords" content="Art contemporain, exposition, Résonances du Vivant, Alain Mouret, Sonja Fasel, Alison Rikunali, vernissage, art immersif">
+    <meta name="author" content="Événement Résonances du Vivant">
+    <meta name="og:title" content="Résonances du Vivant | Exposition d'Art">
+    <meta name="og:description" content="Une soirée qui vous emmènera du monde tangible à l'invisible.">
+    <meta name="og:type" content="website">
+    <meta content="https://votre-site.com/" property="og:url">
+    <meta content="https://votre-site.com/" property="og:site_name">    <!-- Analytics Script (Google Analytics Placeholder) -->
+    <!-- REMPLACER 'YOUR_MEASUREMENT_ID' par votre ID réel -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'YOUR_MEASUREMENT_ID');
+    </script><!-- Cookie Consent Banner -->
+<div id="cookie-consent-banner" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95); /* Noir semi-transparent */
+    color: var(--color-off-white);
+    padding: 15px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-family: var(--font-body);
+    font-size: 0.9em;
+    border-top: 1px solid var(--color-gold);
+">
+    <p style="margin: 0;">
+        🍪 Ce site utilise des cookies pour améliorer votre expérience et analyser son trafic. En continuant votre navigation, vous acceptez notre utilisation des cookies.
+    </p>
+    <button id="accept-cookies" 
+            style="
+                padding: 10px 20px;
+                background-color: var(--color-gold);
+                color: var(--color-black-deep);
+                border: none;
+                cursor: pointer;
+                font-weight: 700;
+                transition: background-color 0.2s;
+            ">
+        J'accepte
+    </button>
+</div>
+<script>
+    // Script simple pour gérer le consentement
+    document.addEventListener('DOMContentLoaded', function() {
+        const banner = document.getElementById('cookie-consent-banner');
+        const acceptButton = document.getElementById('accept-cookies');
+
+        if (!document.cookie.includes('cookie_consent')) {
+            banner.style.display = 'flex';
+        }
+
+        acceptButton.addEventListener('click', function() {
+            // Définit un cookie de consentement pour 1 an
+            document.cookie = "cookie_consent=true; max-age=31536000; path=/";
+            banner.style.display = 'none';
+            // Ici, vous déclencheriez l'envoi du tag analytics si nécessaire
+        });
+    });
+</script>    <!-- FIN DU CONTENU PRINCIPAL -->
+    <div class="container" style="text-align: center; padding-bottom: 50px;">
+        <hr style="border-color: rgba(212, 175, 55, 0.2); margin: 30px 0;">
+        
+        <!-- Contact Info -->
+        <h2 style="font-size: 1.8em; margin-bottom: 15px;">Intéressé par l'événement ?</h2>
+        <p style="font-size: 1.1em; margin-bottom: 30px;">
+            Nous serions ravis d'échanger avec vous sur ce projet artistique.
+        </p>
+        
+        <p style="font-size: 1.2em; color: var(--color-gold); margin-bottom: 20px;">
+            Contact : <a href="mailto:contact@resonancesduvivant.com?subject=Demande%20Information%20%7C%20Site%20Web" style="color: var(--color-off-white); text-decoration: none; border-bottom: 1px dotted var(--color-gold);">contact@resonancesduvivant.com</a>
+        </p>
+        
+        <!-- Copyright -->
+        <p style="font-size: 0.8em; color: #777;">&copy; <?php echo date('Y'); ?> Résonances du Vivant. Tous droits réservés.</p>
+    </div>
+    
+    <!-- Scripts de gestion du contenu et animation -->
+    <script>
+        // 1. Animation On Scroll (Simple Intersection Observer fallback)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Arrête d'observer après apparition
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animated-content').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html><?php 
+    // Début du site
+    include('includes/head.php'); 
+    include('includes/meta.php'); 
+?>
+
+<?php 
+    // --- Contenu de la Page ---
+    ?>
+
+    <!-- SECTION HÉROS (100vh) -->
+    <header id="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: #050505; position: relative; overflow: hidden;">
+        <!-- Overlay pour améliorer la lisibilité du texte -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+        
+        <div class="container animated-content" style="z-index: 10;">
+            <h1 style="font-size: 4.5em; margin-bottom: 15px; animation-delay: 0.1s;">RÉSONANCES DU VIVANT</h1>
+            <p style="font-size: 1.8em; color: #ccc; margin-bottom: 30px; animation-delay: 0.3s;">Du monde tangible à l'invisible</p>
+            
+            <p style="font-size: 1.2em; color: var(--color-gold); margin-bottom: 40px; animation-delay: 0.5s;">
+                📅 Vernissage Immersif - Vendredi 19 juin 2026
+            </p>
+            
+            <a href="mailto:contact@resonancesduvivant.com?subject=Inscription%20au%20vernissage" 
+               class="cta-button animated-content" 
+               style="animation-delay: 0.7s;">
+                💌 Noter la date
+            </a>
+        </div>
+    </header>
+
+    <!-- SECTION L'EXPÉRIENCE -->
+    <section id="experience" class="animated-content" style="padding: 100px 0; background-color: #050505;">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">L'Expérience</h2>
+            <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.3em; line-height: 1.8; padding: 20px; border-left: 3px solid var(--color-gold); padding-left: 20px;">
+                Une soirée qui commence dans la lumière et se termine dans l'obscurité... Une immersion totale dans la matière, la mémoire et le rêve. Venez explorer les limites de la perception avec nous.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION LES ARTISTES -->
+    <section id="artists" class="animated-content" style="padding: 80px 0; background-color: #080808;">
+        <div class="container">
+            <h2 style="margin-bottom: 50px;">Les Artistes</h2>
+            
+            <div id="artists-grid">
+                
+                <!-- Alain Mouret -->
+                <div class="artist-card animated-content" style="animation-delay: 0.2s;">
+                    <div class="artist-image-placeholder" style="background-image: url('assets/images/alain_mouret_placeholder.jpg');"></div>
+                    <h3 style="color: var(--color-off-white);">Alain Mouret</h3>
+                    <p style="font-style: italic; color: #aaa;">Sculptures et installations sonores.</p>
+                </div>
+                
+                <!-- Sonja Fasel -->
+                <div class="artist-card animated-content" style="animation-delay: 0.4s;">
+                    <div class="artist-image-placeholder" style="background-image: url('assets/images/sonja_fasel_placeholder.jpg');"></div>
+                    <h3 style="color: var(--color-offs SEO et Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<!-- Cookie Consent Banner -->
 <div id="cookie-consent-banner" style="
