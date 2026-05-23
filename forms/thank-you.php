@@ -134,4 +134,13 @@
   object-fit: cover;
   z-index: -1;
   opacity: 0.35;
-}
+}assets/
+  videos/
+    alain-mouret-le-trait.webm
+    alain-mouret-le-trait.mp4
+    alison-rikunali-l-invisible.mp4
+    ambiance-exposition-loopable.webm
+    ambiance-exposition-loopable.mp4
+  images/
+    alain-mouret-le-trait-poster.avif
+    alison-rikunali-l-invisible-poster.webp
