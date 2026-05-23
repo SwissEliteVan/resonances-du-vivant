@@ -1,12 +1,12 @@
 ﻿<?php
 /**
- * CONSENT-BANNER.PHP - Bannière de consentement simple
+ * CONSENT-BANNER.PHP - Bannière de consentement Google Analytics
  */
 ?>
 <div id="cookie-consent-banner" class="cookie-consent-banner" aria-live="polite">
     <div class="cookie-consent-inner">
-        <p>🍪 Ce site utilise des cookies fonctionnels et analytiques pour améliorer votre expérience. En poursuivant, vous acceptez notre politique.</p>
-        <button id="cookie-accept" type="button">J’accepte</button>
+        <p>🍪 Ce site utilise des cookies fonctionnels et analytiques pour améliorer votre expérience. En cliquant sur Accepter, vous activez l’analyse.</p>
+        <button id="cookie-accept" type="button">Accepter</button>
     </div>
 </div>
 <style>
@@ -56,12 +56,30 @@
     document.addEventListener('DOMContentLoaded', function() {
         var banner = document.getElementById('cookie-consent-banner');
         var accept = document.getElementById('cookie-accept');
-        if (document.cookie.indexOf('cookie_consent=') !== -1) {
+        var consent = localStorage.getItem('analytics_consent');
+
+        if (consent === 'granted') {
+            banner.classList.add('hidden');
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+            return;
+        }
+
+        if (consent === 'denied') {
             banner.classList.add('hidden');
             return;
         }
+
         accept.addEventListener('click', function() {
-            document.cookie = 'cookie_consent=true; max-age=' + 60*60*24*365 + '; path=/';
+            localStorage.setItem('analytics_consent', 'granted');
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
             banner.classList.add('hidden');
         });
     });
