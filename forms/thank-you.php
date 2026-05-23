@@ -44,3 +44,94 @@
     </style>
 </body>
 </html>
+<video 
+  class="hero-background-video" 
+  autoplay 
+  muted 
+  loop 
+  playsinline
+  aria-hidden="true"
+>
+  <source src="assets/videos/ambiance-exposition-loopable.webm" type="video/webm">
+  <source src="assets/videos/ambiance-exposition-loopable.mp4" type="video/mp4">
+</video><video 
+  class="hero-background-video" 
+  autoplay 
+  muted 
+  loop 
+  playsinline
+  aria-hidden="true"
+>
+  <source src="assets/videos/ambiance-exposition-loopable.webm" type="video/webm">
+  <source src="assets/videos/ambiance-exposition-loopable.mp4" type="video/mp4">
+</video><div class="video-container video-youtube">
+  <iframe 
+    width="100%" 
+    height="auto" 
+    src="https://www.youtube.com/embed/VIDEO_ID" 
+    title="Sonja Fasel - L'Emotion" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div><div class="video-container">
+  <video 
+    controls 
+    preload="metadata" 
+    playsinline
+    poster="assets/images/alison-rikunali-video-poster.webp"
+  >
+    <source src="assets/videos/alison-rikunali-l-invisible.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la balise video HTML5.
+  </video>
+</div><div class="video-container">
+  <video 
+    controls 
+    preload="metadata" 
+    playsinline
+    poster="assets/images/alain-mouret-le-trait-poster.webp"
+  >
+    <source src="assets/videos/alain-mouret-le-trait.webm" type="video/webm">
+    <source src="assets/videos/alain-mouret-le-trait.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la balise video HTML5.
+  </video>
+</div>.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #050505;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-youtube {
+  aspect-ratio: 16 / 9;
+}
+
+.video-youtube iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: block;
+}
+
+.hero-background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.35;
+}
