@@ -96,6 +96,9 @@
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact</h2>
             <p>Pour toute demande de collaboration ou d&apos;information sur l&apos;événement.</p>
+            <p>Telephone : <a href="tel:+41788238950">078 823 89 50</a></p>
+            <p>Email : <a href="mailto:contact@resonancesduvivant.ch">contact@resonancesduvivant.ch</a></p>
+            <p>Site : <a href="https://www.resonancesduvivant.ch" target="_blank" rel="noopener noreferrer">www.resonancesduvivant.ch</a></p>
         </section>
     </main>
 
