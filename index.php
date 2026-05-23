@@ -57,6 +57,28 @@
             </div>
         </section>
 
+        <section class="timeline-section" aria-labelledby="timeline-title">
+            <h2 id="timeline-title">Le Vernissage Immersif</h2>
+            <div class="timeline-list">
+                <article class="timeline-step">
+                    <h3>Accueil et Carnets de Voyage</h3>
+                    <p>Le galeriste et maître des lieux, Ueli Affolter, vous ouvre les portes de la galerie et vous invite à découvrir les carnets qui accompagnent chaque oeuvre.</p>
+                </article>
+                <article class="timeline-step">
+                    <h3>La Poesie des Couleurs</h3>
+                    <p>Experience sensorielle et lecture poetique animee par Sonja Fasel qui met en lumière la profondeur et la nuance de chaque palette.</p>
+                </article>
+                <article class="timeline-step">
+                    <h3>Le Passage vers l'Invisible</h3>
+                    <p>La lumiere se tamise. Au son du hochet chamanique, Alison Rikunali vous guide vers une presence subtile et une immersion plus intime.</p>
+                </article>
+                <article class="timeline-step timeline-closing">
+                    <h3>Cloture</h3>
+                    <p>Pour cloturer cette presentation, un aperitif vous sera chaleureusement propose.</p>
+                </article>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact</h2>
             <p>Pour toute demande de collaboration ou d&apos;information sur l&apos;événement.</p>
