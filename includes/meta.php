@@ -3,29 +3,29 @@
  * META.PHP - SEO et partage social
  */
 ?>
-<title>Résonances du Vivant | Exposition immersive d'art contemporain à Grandcour</title>
-<meta name="description" content="Résonances du Vivant est une exposition immersive sous lumière UV à la Galerie de Grandcour. Vernissage le 19 juin 2026.">
+<title>Resonances du Vivant | Exposition d'Art (Grandcour)</title>
+<meta name="description" content="Une soiree qui commence dans la lumiere et se termine dans l'obscurite. Vernissage immersif le 19 juin 2026 a la Galerie de Grandcour.">
 <link rel="canonical" href="https://www.resonancesduvivant.ch/">
 <meta property="og:locale" content="fr_CH">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Résonances du Vivant | Exposition immersive d'art contemporain à Grandcour">
-<meta property="og:description" content="Une soirée qui commence dans la lumière et se termine dans l'obscurité. Vernissage le 19 juin 2026.">
+<meta property="og:title" content="Resonances du Vivant | Exposition d'Art (Grandcour)">
+<meta property="og:description" content="Une soiree qui commence dans la lumiere et se termine dans l'obscurite. Vernissage immersif le 19 juin 2026 a la Galerie de Grandcour.">
 <meta property="og:url" content="https://www.resonancesduvivant.ch/">
-<meta property="og:site_name" content="Résonances du Vivant">
-<meta property="og:image" content="https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.jpg">
-<meta property="og:image:alt" content="Visuel teaser Résonances du Vivant, exposition immersive sous lumière UV">
+<meta property="og:site_name" content="Resonances du Vivant">
+<meta property="og:image" content="https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.avif">
+<meta property="og:image:alt" content="Resonances du Vivant exposition immersive Grandcour 2026">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Résonances du Vivant | Exposition immersive d'art contemporain à Grandcour">
-<meta name="twitter:description" content="Découvrez l'exposition immersive Résonances du Vivant avec Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
-<meta name="twitter:image" content="https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.jpg">
-<meta name="twitter:image:alt" content="Visuel teaser Résonances du Vivant, exposition immersive sous lumière UV">
+<meta name="twitter:title" content="Resonances du Vivant | Exposition d'Art (Grandcour)">
+<meta name="twitter:description" content="Une soiree qui commence dans la lumiere et se termine dans l'obscurite. Vernissage immersif le 19 juin 2026 a la Galerie de Grandcour.">
+<meta name="twitter:image" content="https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.avif">
+<meta name="twitter:image:alt" content="Resonances du Vivant exposition immersive Grandcour 2026">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ExhibitionEvent",
-  "name": "Résonances du Vivant",
+  "name": "Resonances du Vivant",
   "startDate": "2026-06-19T19:00:00+02:00",
   "endDate": "2026-07-05T23:00:00+02:00",
   "eventStatus": "https://schema.org/EventScheduled",
@@ -42,20 +42,13 @@
     }
   },
   "image": [
-    "https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.jpg"
+    "https://www.resonancesduvivant.ch/assets/images/resonances-du-vivant-hero-exposition-grandcour-2026.avif"
   ],
-  "description": "Une soirée qui commence dans la lumière et se termine dans l'obscurité, avec une expérience immersive sous lumière UV.",
+  "description": "Une soiree qui commence dans la lumiere et se termine dans l'obscurite. Vernissage immersif le 19 juin 2026 a la Galerie de Grandcour.",
   "organizer": {
     "@type": "Organization",
-    "name": "Résonances du Vivant",
+    "name": "Resonances du Vivant",
     "url": "https://www.resonancesduvivant.ch/"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.resonancesduvivant.ch/",
-    "price": "0",
-    "priceCurrency": "CHF",
-    "availability": "https://schema.org/InStock"
   }
 }
 </script>
