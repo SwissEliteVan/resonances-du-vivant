@@ -1,0 +1,21 @@
+{
+  "name": "Résonances du Vivant",
+  "short_name": "Résonances",
+  "description": "Exposition d'art immersif du 19 juin au 5 juillet 2026 à la Galerie de Grandcour.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
