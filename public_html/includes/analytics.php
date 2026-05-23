@@ -1,34 +1,67 @@
-<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #1a1a1a; color: #f4f4f4; padding: 15px; text-align: center; z-index: 1000; border-top: 1px solid #d4af37; display: none;">
-    <p style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">
-        Ce site utilise des cookies pour analyser l'audience et améliorer votre expérience. Acceptez-vous leur utilisation ?
-    </p>
-    <button id="btn-accept" style="background: #d4af37; color: #050505; border: none; padding: 8px 15px; cursor: pointer; margin-right: 10px; font-family: 'Montserrat', sans-serif; font-weight: bold; text-transform: uppercase;">Accepter</button>
-    <button id="btn-decline" style="background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 8px 15px; cursor: pointer; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Refuser</button>
-</div>
-
+<?php
+/**
+ * ANALYTICS.PHP - Script GA4 et suivi d'audience
+ * À configurer avec votre ID Google Analytics 4
+ */
+?>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var banner = document.getElementById('cookie-banner');
-        
-        // Affiche la bannière si aucun choix n'a été fait
-        if (!localStorage.getItem('cookie_consent')) {
-            banner.style.display = 'block';
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Configuration par défaut : consentement refusé jusqu'à l'acceptation
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+    });
+
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+        'page_location': location.href,
+        'page_title': document.title,
+        'anonymize_ip': true
+    });
+</script>
+
+<!-- Measurement Protocol (optionnel pour suivi serveur) -->
+<script>
+    // Fonction helper pour tracker les événements personnalisés
+    function trackEvent(eventName, eventParams) {
+        if (typeof gtag === 'function') {
+            gtag('event', eventName, eventParams);
         }
+    }
 
-        document.getElementById('btn-accept').addEventListener('click', function() {
-            localStorage.setItem('cookie_consent', 'granted');
-            banner.style.display = 'none';
-            // Mise à jour du consentement GA4
-            if(typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted'
+    // Tracker les clics sur CTA
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctaButtons = document.querySelectorAll('.btn-cta');
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                trackEvent('cta_click', {
+                    'button_text': this.textContent,
+                    'button_url': this.href
                 });
-            }
+            });
         });
 
-        document.getElementById('btn-decline').addEventListener('click', function() {
-            localStorage.setItem('cookie_consent', 'denied');
-            banner.style.display = 'none';
-        });
+        // Tracker la visibilité des sections
+        if ('IntersectionObserver' in window) {
+            const sections = document.querySelectorAll('section, header');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        trackEvent('section_view', {
+                            'section_id': entry.target.id || entry.target.className,
+                            'section_name': entry.target.getAttribute('aria-labelledby')
+                        });
+                    }
+                });
+            }, { threshold: 0.25 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
     });
 </script>
