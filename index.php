@@ -16,9 +16,17 @@
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-copy">
                 <p class="eyebrow">Exposition immersive</p>
-                <h1 id="hero-title">Résonances du Vivant</h1>
-                <p class="hero-text">Une expérience artistique contemporaine sous lumière UV, avec des installations sensorielles et une scénographie élégante.</p>
-                <a class="button" href="#contact">Contact</a>
+                <h1 id="hero-title">RESONANCES DU VIVANT</h1>
+                <p class="hero-subtitle">Du monde tangible à l'invisible</p>
+                <div class="hero-details">
+                    <p><strong>Exposition :</strong> Du 19 juin au 5 juillet 2026</p>
+                    <p><strong>Lieu :</strong> Galerie de Grandcour, Rue du Reinz 11</p>
+                    <p><strong>Vernissage Immersif :</strong> Vendredi 19 juin dès 17h00</p>
+                </div>
+                <div class="hero-actions">
+                    <a class="button button-outline" href="https://www.google.com/maps/search/?api=1&query=Galerie+de+Grandcour+Rue+du+Reinz+11" target="_blank" rel="noopener">Itineraire</a>
+                    <a class="button button-solid" href="mailto:contact@resonancesduvivant.ch">Contact</a>
+                </div>
             </div>
         </section>
 

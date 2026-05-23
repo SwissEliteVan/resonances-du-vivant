@@ -70,12 +70,14 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 90px);
+    min-height: 100vh;
     text-align: center;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.16), transparent 25%), radial-gradient(circle at top, rgba(244, 244, 244, 0.07), transparent 28%), #050505;
 }
 
 .hero-copy {
-    max-width: 760px;
+    max-width: 780px;
+    padding: 0 1rem;
 }
 
 .eyebrow {
@@ -89,17 +91,34 @@ a {
 h1 {
     margin: 0;
     font-family: "Playfair Display", serif;
-    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-size: clamp(3rem, 5vw, 5.5rem);
     line-height: 1.02;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
 }
 
-.hero-text {
-    margin: 1.5rem auto 2rem;
-    max-width: 620px;
-    font-size: 1.1rem;
-    line-height: 1.75;
+.hero-subtitle {
+    margin: 1rem auto 1.5rem;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
     color: #e5e0d8;
+}
+
+.hero-details {
+    margin: 1.5rem auto 2rem;
+    max-width: 640px;
+    line-height: 1.8;
+    color: #dcd6c8;
+}
+
+.hero-details p {
+    margin: 0.6rem 0;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .button {
@@ -107,13 +126,38 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 0.95rem 2rem;
-    border: 1px solid #d4af37;
     border-radius: 999px;
-    color: #d4af37;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-weight: 700;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    transform: translateY(-2px);
+}
+
+.button-outline {
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    background: transparent;
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+    background: rgba(212, 175, 55, 0.12);
+}
+
+.button-solid {
+    border: 1px solid #d4af37;
+    background: #d4af37;
+    color: #050505;
+}
+
+.button-solid:hover,
+.button-solid:focus-visible {
+    background: #b88f2e;
 }
 
 .button:hover,
