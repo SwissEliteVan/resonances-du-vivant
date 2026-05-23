@@ -274,6 +274,125 @@
     </style>
 </head>
 <body class="animated-content visible">
+    <!-- Le contenu principal sera inclus ici --><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tags will be included by meta.php later, but we keep the structure open -->
+    <title>Résonances du Vivant | Exposition d'Art</title>
+    
+    <!-- Google Fonts Importation -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Style Minimaliste, Luxueux, Mystérieux -->
+    <style>
+        /* Variables de couleur */
+        :root {
+            --color-black-deep: #050505;
+            --color-gold: #d4af37;
+            --color-off-white: #f4f4f4;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-black-deep);
+            color: var(--color-off-white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prévention du scroll horizontal */
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* --- Animations CSS --- */
+        /* Fade in général pour les éléments de contenu */
+        .animated-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* Classe ajoutée par JavaScript/PHP pour révéler l'élément */
+        .animated-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Style du CTA (Call to Action) */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-gold);
+            color: var(--color-black-deep);
+            transform: scale(1.05);
+        }
+
+        /* Grille des artistes (Utilisation de CSS Grid pour flexibilité) */
+        #artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .artist-card {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a0a0a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .artist-image-placeholder {
+            width: 100%;
+            padding-top: 100%; /* Pour maintenir un ratio 1:1 */
+            background-color: #1a1a1a;
+            background-image: url('assets/images/placeholder.jpg'); /* Placeholder */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 2em; }
+            .cta-button { padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body class="animated-content visible">
     <!-- Le contenu principal sera inclus ici -->Découvrez Résonances du Vivant, une exposition immersive présentant le travail artistique de Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
     <meta name="keywords" content="Art contemp    <!-- Analytics Script (Google Analytics Placeholder) -->
     <!-- REMPLACER 'YOUR_MEASUREMENT_ID' par votre ID réel -->
