@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?php echo filemtime('assets/css/style.css'); ?>">
     
     <!-- Analytics avec consentement -->
     <?php include __DIR__ . '/includes/analytics.php'; ?>
