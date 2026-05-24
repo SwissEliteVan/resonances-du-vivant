@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     color-scheme: dark;
     background-color: #050505;
     color: #f4f4f4;
@@ -958,3 +958,4 @@ h1 {
 .carousel-image { aspect-ratio: 4/5 !important; object-fit: cover !important; }
 
 body { border: 10px solid red !important; }
+.site-logo-container { display: flex !important; justify-content: center !important; margin: 40px auto !important; width: 100% !important; max-width: 250px !important; }
