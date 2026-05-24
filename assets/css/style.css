@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     color-scheme: dark;
     background-color: #050505;
     color: #f4f4f4;
@@ -953,3 +953,6 @@ h1 {
     object-fit: cover !important;
     border: 1px solid #222 !important;
 }
+.site-logo-container { margin: 0 auto !important; display: block !important; }
+.escales-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 20px !important; }
+.carousel-image { aspect-ratio: 4/5 !important; object-fit: cover !important; }
