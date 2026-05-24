@@ -9,18 +9,22 @@ $artists = [
 // Extensions autorisées
 $extensions = ['webp', 'avif', 'jpg', 'jpeg'];
 
-// Dossier des images
-$imagesDir = 'assets/images/';
+// Dossier des images (Chemin web et absolu)
+$imagesDirWeb = '/assets/images/';
+$imagesDirAbsolute = $_SERVER['DOCUMENT_ROOT'] . $imagesDirWeb;
 
 // Parcourir chaque artiste
 foreach ($artists as $artist) {
     // Construire les patterns pour glob
     $allImages = [];
     foreach ($extensions as $ext) {
-        $pattern = $imagesDir . $artist . '-*.' . $ext;
+        $pattern = $imagesDirAbsolute . $artist . '-*.' . $ext;
         $found = glob($pattern);
         if ($found) {
-            $allImages = array_merge($allImages, $found);
+            foreach ($found as $file) {
+                // Créer le chemin web relatif correspondant
+                $allImages[] = $imagesDirWeb . basename($file);
+            }
         }
     }
     
@@ -44,29 +48,12 @@ foreach ($artists as $artist) {
                 $filename = basename($imagePath);
                 $nameWithoutExt = pathinfo($filename, PATHINFO_FILENAME);
                 $altText = ucwords(str_replace('-', ' ', $nameWithoutExt));
-                
-                // Vérification de l'existence du fichier
-                if (file_exists($imagePath)) {
-                    // Image existe : affichage normal
                 ?>
-                    <img
-                        src="<?php echo htmlspecialchars($imagePath); ?>"
-                        alt="<?php echo htmlspecialchars($altText); ?>"
-                        loading="lazy"
-                        class="carousel-image">
-                <?php
-                } else {
-                    // Image n'existe pas : afficher div de debug avec bordure rouge
-                ?>
-                    <div class="carousel-image-error" title="Image manquante">
-                        <div class="error-content">
-                            <span class="error-icon">⚠️</span>
-                            <p class="error-path"><?php echo htmlspecialchars($imagePath); ?></p>
-                        </div>
-                    </div>
-                <?php
-                }
-                ?>
+                <img
+                    src="<?php echo htmlspecialchars($imagePath); ?>"
+                    alt="<?php echo htmlspecialchars($altText); ?>"
+                    loading="lazy"
+                    class="carousel-image">
             <?php endforeach; ?>
         </div>
     </div>

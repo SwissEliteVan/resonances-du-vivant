@@ -156,8 +156,35 @@
         </section>
     </main>
 
-    <?php include __DIR__ . "/includes/consent-banner.php"; ?>
     <?php include __DIR__ . "/includes/footer.php"; ?>
     <script src="assets/js/carousel-touchable.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousels = document.querySelectorAll('.artist-carousel');
+            
+            carousels.forEach(carousel => {
+                let autoScrollInterval;
+                
+                const startAutoScroll = () => {
+                    clearInterval(autoScrollInterval);
+                    autoScrollInterval = setInterval(() => {
+                        const scrollStep = carousel.clientWidth;
+                        if (carousel.scrollLeft + scrollStep >= carousel.scrollWidth - 10) {
+                            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                        }
+                    }, 4000);
+                };
+                
+                startAutoScroll();
+                
+                const stopAutoScroll = () => clearInterval(autoScrollInterval);
+                
+                carousel.addEventListener('mouseenter', stopAutoScroll);
+                carousel.addEventListener('touchstart', stopAutoScroll, {passive: true});
+            });
+        });
+    </script>
 </body>
 </html>
