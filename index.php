@@ -114,20 +114,10 @@
                 <section class="artist-section">
                     <div class="artist-carousel-wrapper">
                         <div class="artist-carousel" role="region" aria-label="Galerie des oeuvres">
-                            <?php
-                            $images = glob(__DIR__ . '/assets/images/*.{jpg,jpeg,png,webp,avif}', GLOB_BRACE);
-                            if ($images) {
-                                foreach ($images as $image) {
-                                    $filename = basename($image);
-                                    if (strpos($filename, 'poster') !== false || strpos($filename, 'logo') !== false || strpos($filename, 'bg') !== false) {
-                                        continue;
-                                    }
-                                    ?>
-                                    <img src="/assets/images/<?php echo $filename; ?>" alt="Artiste" loading="lazy" class="carousel-image">
-                                    <?php
-                                }
-                            }
-                            ?>
+                            <img src="/assets/images/NOM-DE-MON-IMAGE-1.jpg" alt="Artiste" loading="lazy" class="carousel-image">
+                            <img src="/assets/images/NOM-DE-MON-IMAGE-2.jpg" alt="Artiste" loading="lazy" class="carousel-image">
+                            <img src="/assets/images/NOM-DE-MON-IMAGE-3.jpg" alt="Artiste" loading="lazy" class="carousel-image">
+                            <img src="/assets/images/NOM-DE-MON-IMAGE-4.jpg" alt="Artiste" loading="lazy" class="carousel-image">
                         </div>
                     </div>
                 </section>
