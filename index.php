@@ -31,31 +31,74 @@
             </div>
         </section>
 
-        <section class="grid-section" aria-labelledby="artists-title">
-            <h2 id="artists-title">Les escales du voyage</h2>
-            <div class="artist-grid">
-                <article class="artist-card">
-                    <img src="assets/images/alain-mouret-portrait-exposition.avif" alt="Portrait d'Alain Mouret, thème Le Trait" width="600" height="600" loading="lazy">
-                    <div class="artist-copy">
-                        <h3>Alain Mouret</h3>
-                        <p class="artist-theme">Le Trait</p>
-                        <p class="artist-bio">Artiste graphique et dessinateur, Alain Mouret explore la poesie du minimalisme et la force du geste. Son travail se concentre sur l'essence epuree de la ligne, transformant le trait en langage universel. Ses oeuvres interrogent la presence et l'absence, l'espace et le silence.</p>
+        <section class="escales-section" aria-labelledby="escales-title">
+            <h2 id="escales-title">Les escales du voyage</h2>
+            <div class="escales-grid">
+                <article class="escale-card">
+                    <div class="escale-carousel-container">
+                        <div class="escale-carousel">
+                            <img src="assets/images/alain-mouret-1.jpg" alt="Alain Mouret - Image 1" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alain-mouret-2.jpg" alt="Alain Mouret - Image 2" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alain-mouret-3.jpg" alt="Alain Mouret - Image 3" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alain-mouret-4.jpg" alt="Alain Mouret - Image 4" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alain-mouret-5.jpg" alt="Alain Mouret - Image 5" width="600" height="600" loading="lazy">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Image precedente" data-carousel="carousel-1">Precedent</button>
+                        <button class="carousel-btn carousel-next" aria-label="Image suivante" data-carousel="carousel-1">Suivant</button>
+                    </div>
+                    <div class="escale-content">
+                        <h3>Escale 1 : Le Trait</h3>
+                        <p class="escale-artist">Alain Mouret</p>
+                        <p class="escale-description">L'artiste Alain Mouret explore la maitrise du trait a travers des oeuvres minimalistes, saisissantes et mysterieuses.</p>
+                        <div class="escale-actions">
+                            <a class="button button-outline" href="#" target="_blank" rel="noopener">Visiter le site</a>
+                        </div>
                     </div>
                 </article>
-                <article class="artist-card">
-                    <img src="assets/images/sonja-fasel-portrait-exposition.avif" alt="Portrait de Sonja Fasel, thème L'Emotion" width="600" height="600" loading="lazy">
-                    <div class="artist-copy">
-                        <h3>Sonja Fasel</h3>
-                        <p class="artist-theme">L'Emotion</p>
-                        <p class="artist-bio">Therapeute en arts expressifs et artiste visuelle, Sonja Fasel cree un univers poetique ou la couleur devient langage emotionnel. Ses palettes vibrantes et ses compositions dynamiques invitent le spectateur a un voyage interieur, une exploration des sentiments et des resonances de l'ame.</p>
+
+                <article class="escale-card">
+                    <div class="escale-carousel-container">
+                        <div class="escale-carousel">
+                            <img src="assets/images/sonja-fasel-1.jpg" alt="Sonja Fasel - Image 1" width="600" height="600" loading="lazy">
+                            <img src="assets/images/sonja-fasel-2.jpg" alt="Sonja Fasel - Image 2" width="600" height="600" loading="lazy">
+                            <img src="assets/images/sonja-fasel-3.jpg" alt="Sonja Fasel - Image 3" width="600" height="600" loading="lazy">
+                            <img src="assets/images/sonja-fasel-4.jpg" alt="Sonja Fasel - Image 4" width="600" height="600" loading="lazy">
+                            <img src="assets/images/sonja-fasel-5.jpg" alt="Sonja Fasel - Image 5" width="600" height="600" loading="lazy">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Image precedente" data-carousel="carousel-2">Precedent</button>
+                        <button class="carousel-btn carousel-next" aria-label="Image suivante" data-carousel="carousel-2">Suivant</button>
+                    </div>
+                    <div class="escale-content">
+                        <h3>Escale 2 : Le Mouvement et l'Emotion</h3>
+                        <p class="escale-artist">Sonja Fasel</p>
+                        <p class="escale-description">A travers son concept "Farben erzahlen lassen" (Laisser parler les couleurs), Sonja transforme la fluidite des rivieres et le temps qui passe en une veritable poesie picturale.</p>
+                        <div class="escale-actions">
+                            <a class="button button-outline" href="#" target="_blank" rel="noopener">Decouvrir sa boutique</a>
+                            <a class="button button-outline" href="mailto:contact@resonancesduvivant.ch">Contacter l'artiste</a>
+                        </div>
                     </div>
                 </article>
-                <article class="artist-card">
-                    <img src="assets/images/alison-rikunali-portrait-exposition.avif" alt="Portrait d'Alison Rikunali, thème L'Invisible" width="600" height="600" loading="lazy">
-                    <div class="artist-copy">
-                        <h3>Alison Rikunali</h3>
-                        <p class="artist-theme">L'Invisible</p>
-                        <p class="artist-bio">Therapeute, geobiologue et guerisseuse chamanique basee a La Tour-de-Peilz, Alison Vurpillat Portmann (Rikunali) concoit son art comme un veritable acte d'artivisme. Plongez dans sa clairiere ephemere ou ses Toiles Vibratoires s'illuminent sous la lumiere noire, revelant les trames energetiques de la foret, les animaux totems et les esprits. Une oeuvre de resistance spirituelle et ecologique.</p>
+
+                <article class="escale-card">
+                    <div class="escale-carousel-container">
+                        <div class="escale-carousel">
+                            <img src="assets/images/alison-rikunali-1.jpg" alt="Alison Rikunali - Image 1" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alison-rikunali-2.jpg" alt="Alison Rikunali - Image 2" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alison-rikunali-3.jpg" alt="Alison Rikunali - Image 3" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alison-rikunali-4.jpg" alt="Alison Rikunali - Image 4" width="600" height="600" loading="lazy">
+                            <img src="assets/images/alison-rikunali-5.jpg" alt="Alison Rikunali - Image 5" width="600" height="600" loading="lazy">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Image precedente" data-carousel="carousel-3">Precedent</button>
+                        <button class="carousel-btn carousel-next" aria-label="Image suivante" data-carousel="carousel-3">Suivant</button>
+                    </div>
+                    <div class="escale-content">
+                        <h3>Escale 3 : Le Sanctuaire et l'Invisible</h3>
+                        <p class="escale-artist">Alison "Rikunali"</p>
+                        <p class="escale-description">Therapeute et chamane, Rikunali propose un artivisme vibrant. Plongez dans sa clairiere ephemere ou ses toiles fluorescentes s'illuminent dans l'obscurite pour reveler les trames energetiques de la foret.</p>
+                        <div class="escale-actions">
+                            <a class="button button-outline" href="https://www.instagram.com/rikunali" target="_blank" rel="noopener">Suivre @Rikunali</a>
+                            <a class="button button-outline" href="mailto:contact@resonancesduvivant.ch">Contacter l'artiste</a>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -104,5 +147,6 @@
 
     <?php include __DIR__ . "/includes/consent-banner.php"; ?>
     <?php include __DIR__ . "/includes/footer.php"; ?>
+    <script src="assets/js/carousel.js" defer></script>
 </body>
 </html>

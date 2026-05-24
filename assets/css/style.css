@@ -435,3 +435,145 @@ h1 {
         padding-left: 1rem;
     }
 }
+
+/* Escales Section - Carousel Styles */
+.escales-section {
+    padding: 2rem 0;
+}
+
+.escales-section h2 {
+    margin-bottom: 2rem;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.escales-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.escale-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.escale-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.escale-carousel-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.escale-carousel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.escale-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: #d4af37;
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+    background: rgba(212, 175, 55, 0.3);
+    color: #fff;
+}
+
+.carousel-prev {
+    left: 0.75rem;
+}
+
+.carousel-next {
+    right: 0.75rem;
+}
+
+.escale-content {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.escale-card h3 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    color: #d4af37;
+    letter-spacing: 0.08em;
+}
+
+.escale-artist {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #e5e0d8;
+}
+
+.escale-description {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #e5e0d8;
+}
+
+.escale-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 980px) {
+    .escales-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .escales-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-btn {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.6rem;
+    }
+}
