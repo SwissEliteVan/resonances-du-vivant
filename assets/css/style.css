@@ -857,3 +857,47 @@ h1 {
          padding: clamp(1rem, 2vw, 1.5rem);
      }
  }
+
+ /* --- REPARATION D'URGENCE DU CARROUSEL --- */
+.artist-carousel-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.artist-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; /* Glissement tactile natif */
+    scrollbar-width: none; /* Cache la barre sur Firefox */
+    padding: 20px 0;
+}
+
+.artist-carousel::-webkit-scrollbar {
+    display: none; /* Cache la barre sur Chrome/Safari */
+}
+
+.carousel-image {
+    flex: 0 0 calc(100% - 20px); /* 1 image par écran sur mobile */
+    scroll-snap-align: center;
+    aspect-ratio: 4/5; /* Ratio photo d'art */
+    object-fit: cover; /* Anti-déformation */
+    border-radius: 2px;
+    transition: transform 0.5s ease;
+    background: #111;
+}
+
+/* Responsive : Tablette (2 images) et PC (3 images) */
+@media (min-width: 768px) {
+    .carousel-image { flex: 0 0 calc(50% - 10px); }
+}
+@media (min-width: 1024px) {
+    .carousel-image { flex: 0 0 calc(33.33% - 14px); }
+}
+
+.carousel-image:hover {
+    transform: scale(1.02); /* Effet luxe au survol */
+}
