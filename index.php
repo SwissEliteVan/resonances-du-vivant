@@ -62,23 +62,23 @@
         </section>
 
         <section class="timeline-section" aria-labelledby="timeline-title">
-            <h2 id="timeline-title">Le Vernissage Immersif</h2>
+            <h2 id="timeline-title">LE VERNISSAGE IMMERSIF (Vendredi 19 Juin)</h2>
             <div class="timeline-list">
                 <article class="timeline-step">
                     <h3>Accueil et Carnets de Voyage</h3>
-                    <p>Le galeriste et maître des lieux, Ueli Affolter, vous ouvre les portes de la galerie et vous invite à découvrir les carnets qui accompagnent chaque oeuvre.</p>
+                    <p>Le galeriste et maitre des lieux, Ueli Affolter, vous ouvre les portes de la galerie. Degustation de specialites locales pour marquer l'ancrage de l'exposition.</p>
                 </article>
                 <article class="timeline-step">
                     <h3>La Poesie des Couleurs</h3>
-                    <p>Experience sensorielle et lecture poetique animee par Sonja Fasel qui met en lumière la profondeur et la nuance de chaque palette.</p>
+                    <p>Experience sensorielle et lecture poetique animee par Sonja Fasel, pour comprendre comment ses oeuvres chantent et respirent.</p>
                 </article>
                 <article class="timeline-step">
                     <h3>Le Passage vers l'Invisible</h3>
-                    <p>La lumiere se tamise. Au son du hochet chamanique, Alison Rikunali vous guide vers une presence subtile et une immersion plus intime.</p>
+                    <p>La lumiere se tamise. Au son du hochet chamanique, Alison "Rikunali" vous guide dans sa clairiere ephemere sous la lumiere noire, revelant la magie de ses toiles vibratoires.</p>
                 </article>
                 <article class="timeline-step timeline-closing">
                     <h3>Cloture</h3>
-                    <p>Pour cloturer cette presentation, un aperitif vous sera chaleureusement propose.</p>
+                    <p>Pour cloturer cette presentation et prolonger nos echanges, un aperitif de bienvenue vous sera chaleureusement propose.</p>
                 </article>
             </div>
         </section>
