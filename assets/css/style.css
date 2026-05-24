@@ -592,13 +592,95 @@ h1 {
     }
 }
 
-@media (max-width: 720px) {
-    .escales-grid {
-        grid-template-columns: 1fr;
-    }
+/* Artists Carousels Section */
+.artists-carousels-section {
+    padding: 3rem 1rem;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.5), transparent);
+}
 
-    .carousel-btn {
-        font-size: 0.7rem;
-        padding: 0.5rem 0.6rem;
+.artists-carousels-section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    color: #d4af37;
+    font-family: "Playfair Display", serif;
+}
+
+.artists-carousels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.artist-carousel-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: slideUp 0.8s ease-out;
+}
+
+.artist-carousel-card:hover {
+    transform: translateY(-4px);
+}
+
+.artist-carousel-info {
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+
+.artist-carousel-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.3rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.08em;
+}
+
+.artist-theme {
+    font-size: 0.95rem;
+    color: #b8a678;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.artist-bio {
+    font-size: 0.9rem;
+    color: #e5e0d8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+
+@media (max-width: 720px) {
+     .escales-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .carousel-btn {
+         font-size: 0.7rem;
+         padding: 0.5rem 0.6rem;
+     }
+
+     .artists-carousels-grid {
+         grid-template-columns: 1fr;
+         gap: 1.5rem;
+     }
+
+     .artists-carousels-section h2 {
+         font-size: 1.5rem;
+     }
+ }

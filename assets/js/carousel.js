@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const carousels = document.querySelectorAll('.escale-carousel');
     const carouselBtns = document.querySelectorAll('.carousel-btn');
+    let autoPlayIntervals = {};
 
     // Initialize carousel state
     const carouselStates = {
@@ -18,6 +19,31 @@ document.addEventListener('DOMContentLoaded', function() {
         carousel.style.transform = `translateX(${translateX}%)`;
     }
 
+    function startAutoPlay(carouselId) {
+        // Clear existing interval
+        if (autoPlayIntervals[carouselId]) {
+            clearInterval(autoPlayIntervals[carouselId]);
+        }
+
+        // Auto-play every 4 seconds
+        autoPlayIntervals[carouselId] = setInterval(() => {
+            carouselStates[carouselId] = (carouselStates[carouselId] + 1) % 5;
+            updateCarousel(carouselId);
+        }, 4000);
+    }
+
+    function resetAutoPlay(carouselId) {
+        if (autoPlayIntervals[carouselId]) {
+            clearInterval(autoPlayIntervals[carouselId]);
+        }
+        startAutoPlay(carouselId);
+    }
+
+    // Initialize auto-play for all carousels
+    Object.keys(carouselStates).forEach(carouselId => {
+        startAutoPlay(carouselId);
+    });
+
     carouselBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const carouselId = this.getAttribute('data-carousel');
@@ -30,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             updateCarousel(carouselId);
+            resetAutoPlay(carouselId);
         });
     });
 
@@ -48,5 +75,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (nextBtn) nextBtn.click();
             }
         }
+    });
+
+    // Pause auto-play on hover
+    document.querySelectorAll('.escale-carousel-container').forEach(container => {
+        const carouselId = container.querySelector('[data-carousel]').getAttribute('data-carousel');
+        
+        container.addEventListener('mouseenter', () => {
+            if (autoPlayIntervals[carouselId]) {
+                clearInterval(autoPlayIntervals[carouselId]);
+            }
+        });
+
+        container.addEventListener('mouseleave', () => {
+            startAutoPlay(carouselId);
+        });
     });
 });
