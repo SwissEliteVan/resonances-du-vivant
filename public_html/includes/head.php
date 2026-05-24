@@ -1,1101 +1,324 @@
-<head>
+﻿<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- Meta Tag<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <!-- Meta tags will be included by meta.php later, but we keep the structure open -->
-    <title>Résonances du Vivant | Exposition d'Art</title>
-    
-    <!-- Google Fonts Importation -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Style Minimaliste, Luxueux, Mystérieux -->
-    <style>
-        /* Variables de couleur */
-        :root {
-            --color-black-deep: #050505;
-            --color-gold: #d4af37;
-            --color-off-white: #f4f4f4;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: var(--color-black-deep);
-            color: var(--color-off-white);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden; /* Prévention du scroll horizontal */
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--color-gold);
-            text-align: center;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        /* --- Animations CSS --- */
-        /* Fade in général pour les éléments de contenu */
-        .animated-content {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        /* Classe ajoutée par JavaScript/PHP pour révéler l'élément */
-        .animated-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Style du CTA (Call to Action) */
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: transparent;
-            color: var(--color-gold);
-            border: 2px solid var(--color-gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-            margin-top: 20px;
-            font-weight: 700;
-        }
-
-        .cta-button:hover {
-            background-color: var(--color-gold);
-            color: var(--color-black-deep);
-            transform: scale(1.05);
-        }
-
-        /* Grille des artistes (Utilisation de CSS Grid pour flexibilité) */
-        #artists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .artist-card {
-            text-align: center;
-            padding: 20px;
-            background-color: #0a0a0a;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .artist-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-        }
-
-        .artist-image-placeholder {
-            width: 100%;
-            padding-top: 100%; /* Pour maintenir un ratio 1:1 */
-            background-color: #1a1a1a;
-            background-image: url('assets/images/placeholder.jpg'); /* Placeholder */
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            .cta-button { padding: 10px 20px; }
-        }
-    </style>
-</head>
-<body class="animated-content visible">
-    <!-- Le contenu principal sera inclus ici -->    <!-- Meta Tags SEO et Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez Résonances du Vivant, une exposition immersive présentant le travail artistique de Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
-    <meta name="keywords" content="Art contemporain, exposition, Résonances du Vivant, Alain Mouret, Sonja Fasel, Alison Rikunali, vernissage, art immersif">
-    <meta name="author" content="Événement Résonances du Vivant">
-    <meta name="og:title" content="Résonances du Vivant | Exposition d'Art">
-    <meta name="og:description" content="Une soirée qui vous emmènera du monde tangible à l'invisible.">
-    <meta name="og:type" content="website">
-    <meta content="https://votre-site.com/" property="og:url">
-    <meta content="https://votre-site.com/" property="og:site_name">    <!-- Analytics Script (Google Analytics Placeholder) -->
-    <!-- REMPLACER 'YOUR_MEASUREMENT_ID' par votre ID réel -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'YOUR_MEASUREMENT_ID');
-    </script><!-- Cookie Consent Banner -->
-<div id="cookie-consent-banner" style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(10, 10, 10, 0.95); /* Noir semi-transparent */
-    color: var(--color-off-white);
-    padding: 15px 20px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    font-family: var(--font-body);
-    font-size: 0.9em;
-    border-top: 1px solid var(--color-gold);
-">
-    <p style="margin: 0;">
-        🍪 Ce site utilise des cookies pour améliorer votre expérience et analyser son trafic. En continuant votre navigation, vous acceptez notre utilisation des cookies.
-    </p>
-    <button id="accept-cookies" 
-            style="
-                padding: 10px 20px;
-                background-color: var(--color-gold);
-                color: var(--color-black-deep);
-                border: none;
-                cursor: pointer;
-                font-weight: 700;
-                transition: background-color 0.2s;
-            ">
-        J'accepte
-    </button>
-</div>
-<script>
-    // Script simple pour gérer le consentement
-    document.addEventListener('DOMContentLoaded', function() {
-        const banner = document.getElementById('cookie-consent-banner');
-        const acceptButton = document.getElementById('accept-cookies');
-
-        if (!document.cookie.includes('cookie_consent')) {
-            banner.style.display = 'flex';
-        }
-
-        acceptButton.addEventListener('click', function() {
-            // Définit un cookie de consentement pour 1 an
-            document.cookie = "cookie_consent=true; max-age=31536000; path=/";
-            banner.style.display = 'none';
-            // Ici, vous déclencheriez l'envoi du tag analytics si nécessaire
-        });
-    });
-</script>    <!-- FIN DU CONTENU PRINCIPAL -->
-    <div class="container" style="text-align: center; padding-bottom: 50px;">
-        <hr style="border-color: rgba(212, 175, 55, 0.2); margin: 30px 0;">
-        
-        <!-- Contact Info -->
-        <h2 style="font-size: 1.8em; margin-bottom: 15px;">Intéressé par l'événement ?</h2>
-        <p style="font-size: 1.1em; margin-bottom: 30px;">
-            Nous serions ravis d'échanger avec vous sur ce projet artistique.
-        </p>
-        
-        <p style="font-size: 1.2em; color: var(--color-gold); margin-bottom: 20px;">
-            Contact : <a href="mailto:contact@resonancesduvivant.com?subject=Demande%20Information%20%7C%20Site%20Web" style="color: var(--color-off-white); text-decoration: none; border-bottom: 1px dotted var(--color-gold);">contact@resonancesduvivant.com</a>
-        </p>
-        
-        <!-- Copyright -->
-        <p style="font-size: 0.8em; color: #777;">&copy; <?php echo date('Y'); ?> Résonances du Vivant. Tous droits réservés.</p>
-    </div>
-    
-    <!-- Scripts de gestion du contenu et animation -->
-    <script>
-        // 1. Animation On Scroll (Simple Intersection Observer fallback)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Arrête d'observer après apparition
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animated-content').forEach(element => {
-            observer.observe(element);
-        });
-    </script>
-</body>
-</html><?php 
-    // Début du site
-    include('includes/head.php'); 
-    include('includes/meta.php'); 
-?>
-
-<?php 
-    // --- Contenu de la Page ---
-    ?>
-
-    <!-- SECTION HÉROS (100vh) -->
-    <header id="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: #050505; position: relative; overflow: hidden;">
-        <!-- Overlay pour améliorer la lisibilité du texte -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
-        
-        <div class="container animated-content" style="z-index: 10;">
-            <h1 style="font-size: 4.5em; margin-bottom: 15px; animation-delay: 0.1s;">RÉSONANCES DU VIVANT</h1>
-            <p style="font-size: 1.8em; color: #ccc; margin-bottom: 30px; animation-delay: 0.3s;">Du monde tangible à l'invisible</p>
-            
-            <p style="font-size: 1.2em; color: var(--color-gold); margin-bottom: 40px; animation-delay: 0.5s;">
-                📅 Vernissage Immersif - Vendredi 19 juin 2026
-            </p>
-            
-            <a href="mailto:contact@resonancesduvivant.com?subject=Inscription%20au%20vernissage" 
-               class="cta-button animated-content" 
-               style="animation-delay: 0.7s;">
-                💌 Noter la date
-            </a>
-        </div>
-    </header>
-
-    <!-- SECTION L'EXPÉRIENCE -->
-    <section id="experience" class="animated-content" style="padding: 100px 0; background-color: #050505;">
-        <div class="container">
-            <h2 style="margin-bottom: 30px;">L'Expérience</h2>
-            <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.3em; line-height: 1.8; padding: 20px; border-left: 3px solid var(--color-gold); padding-left: 20px;">
-                Une soirée qui commence dans la lumière et se termine dans l'obscurité... Une immersion totale dans la matière, la mémoire et le rêve. Venez explorer les limites de la perception avec nous.
-            </p>
-        </div>
-    </section>
-
-    <!-- SECTION LES ARTISTES -->
-    <section id="artists" class="animated-content" style="padding: 80px 0; background-color: #080808;">
-        <div class="container">
-            <h2 style="margin-bottom: 50px;">Les Artistes</h2>
-            
-            <div id="artists-grid">
-                
-                <!-- Alain Mouret -->
-                <div class="artist-card animated-content" style="animation-delay: 0.2s;">
-                    <div class="artist-image-placeholder" style="background-image: url('assets/images/alain_mouret_placeholder.jpg');"></div>
-                    <h3 style="color: var(--color-off-white);">Alain Mouret</h3>
-                    <p style="font-style: italic; color: #aaa;">Sculptures et installations sonores.</p>
-                </div>
-                
-                <!-- Sonja Fasel -->
-                <div class="artist-card animated-content" style="animation-delay: 0.4s;">
-                    <div class="artist-image-placeholder" style="background-image: url('assets/images/sonja_fasel_placeholder.jpg');"></div>
-                    <h3 style="color: var(--color-offs SEO et Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<!-- Cookie Consent Banner -->
-<div id="cookie-consent-banner" style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(10, 10, 10, 0.95); /* Noir semi-transparent */
-    color: var(--color-off-white);
-    padding: 15px 20px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    font-family: var(--font-body);
-    font-size: 0.9em;
-    border-top: 1px solid var(--color-gold);
-">
-    <p style="margin: 0;">
-        🍪 Ce site utilise des cookies pour améliorer votre expérience et analyser son trafic. En continuant votre navigation, vous acceptez notre utilisation des cookies.
-    </p>
-    <button id="accept-cookies" 
-            style="
-                padding: 10px 20px;
-                background-color: var(--color-gold);
-                color: var(--color-black-deep);
-                border: none;
-                cursor: pointer;
-                font-weight: 700;
-                transition: background-color 0.2s;
-            ">
-        J'accepte
-    </button>
-</div>
-<script>
-    // Script simple pour gérer le consentement
-    document.addEventListener('DOMContentLoaded', function() {
-        const banner = document.getElementById('cookie-consent-banner');
-        const acceptButton = document.getElementById('accept-cookies');
-
-        if (!document.cookie.includes('cookie_consent')) {
-            banner.style.display = 'flex';
-        }
-
-        acceptButton.addEventListener('click', function() {
-            // Définit un cookie de consentement pour 1 an
-            document.cookie = "cookie_consent=true; max-age=31536000; path=/";
-            banner.style.display = 'none';
-            // Ici, vous déclencheriez l'envoi du tag analytics si nécessaire
-        });
-    });
-</script>    <!-- FIN DU CONTENU PRINCIPAL -->
-    <div class="container" style="text-align: center; padding-bottom: 50px;">
-        <hr style="border-color: rgba(212, 175, 55, 0.2); margin: 30px 0;">
-        
-        <!-- Contact Info -->
-        <h2 style="font-size: 1.8em; margin-bottom: 15px;">Intéressé par l'événement ?</h2>
-        <p style="font-size: 1.1em; margin-bottom: 30px;">
-            Nous serions ravis d'échanger avec vous sur ce projet artistique.
-        </p>
-        
-        <p style="font-size: 1.2em; color: var(--color-gold); margin-bottom: 20px;">
-            Contact : <a href="mailto:contact@resonancesduvivant.com?subject=Demande%20Information%20%7C%20Site%20Web" style="color: var(--color-off-white); text-decoration: none; border-bottom: 1px dotted var(--color-gold);">contact@resonancesduvivant.com</a>
-        </p>
-        
-        <!-- Copyright -->
-        <p style="font-size: 0.8em; color: #777;">&copy; <?php echo date('Y'); ?> Résonances du Vivant. Tous droits réservés.</p>
-    </div>
-    
-    <!-- Scripts de gestion du contenu et animation -->
-    <script>
-        // 1. Animation On Scroll (Simple Intersection Observer fallback)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Arrête d'observer après apparition
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animated-content').forEach(element => {
-            observer.observe(element);
-        });
-    </script>
-</body>
-</html><?php 
-    // Début du site
-    include('includes/head.php'); 
-    include('includes/meta.php'); 
-?>
-
-<?php 
-    // --- Contenu de la Page ---
-    ?>
-
-    <!-- SECTION HÉROS (100vh) -->
-    <header id="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: #050505; position: relative; overflow: hidden;">
-        <!-- Overlay pour améliorer la lisibilité du texte -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
-        
-        <div class="container animated-content" style="z-index: 10;">
-            <h1 style="font-size: 4.5em; margin-bottom: 15px; animation-delay: 0.1s;">RÉSONANCES DU VIVANT</h1>
-            <p style="font-size: 1.8em; color: #ccc; margin-bottom: 30px; animation-delay: 0.3s;">Du monde tangible à l'invisible</p>
-            
-            <p style="font-size: 1.2em; color: var(--color-gold); margin-bottom: 40px; animation-delay: 0.5s;">
-                📅 Vernissage Immersif - Vendredi 19 juin 2026
-            </p>
-            
-            <a href="mailto:contact@resonancesduvivant.com?subject=Inscription%20au%20vernissage" 
-               class="cta-button animated-content" 
-               style="animation-delay: 0.7s;">
-                💌 Noter la date
-            </a>
-        </div>
-    </header>
-
-    <!-- SECTION L'EXPÉRIENCE -->
-    <section id="experience" class="animated-content" style="padding: 100px 0; background-color: #050505;">
-        <div class="container">
-            <h2 style="margin-bottom: 30px;">L'Expérience</h2>
-            <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.3em; line-height: 1.8; padding: 20px; border-left: 3px solid var(--color-gold); padding-left: 20px;">
-                Une soirée qui commence dans la lumière et se termine dans l'obscurité... Une immersion totale dans la matière, la mémoire et le rêve. Venez explorer les limites de la perception avec nous.
-            </p>
-        </div>
-    </section>
-
-    <!-- SECTION LES ARTISTES -->
-    <section id="artists" class="animated-content" style="padding: 80px 0; background-color: #080808;">
-        <div class="container">
-            <h2 style="margin-bottom: 50px;">Les Artistes</h2>
-            
-            <div id="artists-grid">
-                
-                <!-- Alain Mouret -->
-                <div class="artist-card animated-content" style="animation-delay: 0.2s;">
-                    <div class="artist-image-placeholder" style="background-image: url('assets/images/alain_mouret_placeholder.jpg');"></div>
-                    <h3 style="color: var(--color-off-white);">Alain Mouret</h3>
-                    <p style="font-style: italic; color: #aaa;">Sculptures et installations sonores.</p>
-                </div>
-                
-                <!-- Sonja Fasel -->
-                <div class="artist-card animated-content" style="animation-delay: 0.4s;">
-                    <div class="artist-image-placeholder" style="background-image: url('assets/images/sonja_fasel_placeholder.jpg');"></div>
-                    <h3 style="color: var(--color-off<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <!-- Meta tags will be included by meta.php later, but we keep the structure open -->
-    <title>Résonances du Vivant | Exposition d'Art</title>
-    
-    <!-- Google Fonts Importation -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Style Minimaliste, Luxueux, Mystérieux -->
-    <style>
-        /* Variables de couleur */
-        :root {
-            --color-black-deep: #050505;
-            --color-gold: #d4af37;
-            --color-off-white: #f4f4f4;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: var(--color-black-deep);
-            color: var(--color-off-white);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden; /* Prévention du scroll horizontal */
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--color-gold);
-            text-align: center;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        /* --- Animations CSS --- */
-        /* Fade in général pour les éléments de contenu */
-        .animated-content {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        /* Classe ajoutée par JavaScript/PHP pour révéler l'élément */
-        .animated-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Style du CTA (Call to Action) */
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: transparent;
-            color: var(--color-gold);
-            border: 2px solid var(--color-gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-            margin-top: 20px;
-            font-weight: 700;
-        }
-
-        .cta-button:hover {
-            background-color: var(--color-gold);
-            color: var(--color-black-deep);
-            transform: scale(1.05);
-        }
-
-        /* Grille des artistes (Utilisation de CSS Grid pour flexibilité) */
-        #artists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .artist-card {
-            text-align: center;
-            padding: 20px;
-            background-color: #0a0a0a;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .artist-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-        }
-
-        .artist-image-placeholder {
-            width: 100%;
-            padding-top: 100%; /* Pour maintenir un ratio 1:1 */
-            background-color: #1a1a1a;
-            background-image: url('assets/images/placeholder.jpg'); /* Placeholder */
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            .cta-button { padding: 10px 20px; }
-        }
-    </style>
-</head>
-<body class="animated-content visible">
-    <!-- Le contenu principal sera inclus ici --><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <!-- Meta tags will be included by meta.php later, but we keep the structure open -->
-    <title>Résonances du Vivant | Exposition d'Art</title>
-    
-    <!-- Google Fonts Importation -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Style Minimaliste, Luxueux, Mystérieux -->
-    <style>
-        /* Variables de couleur */
-        :root {
-            --color-black-deep: #050505;
-            --color-gold: #d4af37;
-            --color-off-white: #f4f4f4;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: var(--color-black-deep);
-            color: var(--color-off-white);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden; /* Prévention du scroll horizontal */
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--color-gold);
-            text-align: center;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        /* --- Animations CSS --- */
-        /* Fade in général pour les éléments de contenu */
-        .animated-content {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        /* Classe ajoutée par JavaScript/PHP pour révéler l'élément */
-        .animated-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Style du CTA (Call to Action) */
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: transparent;
-            color: var(--color-gold);
-            border: 2px solid var(--color-gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-            margin-top: 20px;
-            font-weight: 700;
-        }
-
-        .cta-button:hover {
-            background-color: var(--color-gold);
-            color: var(--color-black-deep);
-            transform: scale(1.05);
-        }
-
-        /* Grille des artistes (Utilisation de CSS Grid pour flexibilité) */
-        #artists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .artist-card {
-            text-align: center;
-            padding: 20px;
-            background-color: #0a0a0a;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .artist-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-        }
-
-        .artist-image-placeholder {
-            width: 100%;
-            padding-top: 100%; /* Pour maintenir un ratio 1:1 */
-            background-color: #1a1a1a;
-            background-image: url('assets/images/placeholder.jpg'); /* Placeholder */
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            .cta-button { padding: 10px 20px; }
-        }
-    </style>
-</head>
-<body class="animated-content visible">
-    <!-- Le contenu principal sera inclus ici -->Découvrez Résonances du Vivant, une exposition immersive présentant le travail artistique de Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
-    <meta name="keywords" content="Art contemp    <!-- Analytics Script (Google Analytics Placeholder) -->
-    <!-- REMPLACER 'YOUR_MEASUREMENT_ID' par votre ID réel -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'YOUR_MEASUREMENT_ID');
-    </script>orain, exposition, Résonances du Vivant, Alain Mouret, Sonja Fasel, Alison Rikunali, vernissage, art immersif">
-    <meta name="author" content="Événement Résonances du Vivant">
-    <meta name="og:title" content="Résonances du Vivant | Exposition d'Art">
-    <meta name="og:description" content="Une soirée qui vous emmènera du monde tangible à l'invisible.">
-    <meta name="og:type" content="website">
-    <meta content="https://votre-site.com/" property="og:url">
-    <meta content="https://votre-site.com/" property="og:site_name">
-    <?php include 'meta.php'; ?>
-    
-    <!-- Preconnect aux ressources externes critiques -->
+    <meta name="theme-color" content="#050505">
+    <?php include __DIR__ . '/meta.php'; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- CSS optimisé -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ============ VARIABLES & RESET ============ */
         :root {
-            --bg-color: #050505;
-            --text-or: #d4af37;
-            --text-blanc: #f4f4f4;
-            --text-gris: #999;
-            --font-titre: 'Playfair Display', serif;
-            --font-texte: 'Montserrat', sans-serif;
-            --transition: all 0.3s ease;
+            --bg: #050505;
+            --gold: #d4af37;
+            --ivory: #f4f4f4;
+            --grey: #9c9c9c;
+            --shadow: 0 35px 90px rgba(0, 0, 0, 0.28);
+            --radius: 1.5rem;
+            --max-width: 1200px;
+            --transition: 0.3s ease;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
+        *, *::before, *::after {
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-blanc);
-            font-family: var(--font-texte);
-            font-weight: 300;
-            line-height: 1.6;
-            text-align: center;
-            overflow-x: hidden;
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 20%), var(--bg);
+            color: var(--ivory);
+            line-height: 1.7;
         }
-
-        /* Amélioration de l'accessibilité */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(244, 244, 244, 0.05), transparent 30%), radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.06), transparent 18%);
+            pointer-events: none;
         }
-
-        /* ============ TYPOGRAPHIE ============ */
-        h1, h2, h3, .serif {
-            font-family: var(--font-titre);
-            color: var(--text-or);
-            font-weight: 700;
-            letter-spacing: 1px;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
         }
-
-        h1 {
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            margin-bottom: 0.5rem;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
-
-        h2 {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            margin-bottom: 1rem;
+        .site-header {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(10px);
         }
-
-        h3 {
-            font-size: 1.5rem;
-            margin: 1rem 0 0.5rem;
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
         }
-
-        p {
-            margin: 0.5rem 0;
+        .brand span {
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            color: var(--grey);
         }
-
-        /* ============ SECTION HÉROS ============ */
+        .site-nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .site-nav a {
+            color: var(--ivory);
+            font-size: 0.95rem;
+            transition: color var(--transition);
+        }
+        .site-nav a:hover,
+        .site-nav a:focus-visible {
+            color: var(--gold);
+        }
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-color) 70%);
-            padding: 2rem;
-            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+            padding: 4rem 1.5rem;
             position: relative;
         }
-
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.12), transparent 35%);
+            pointer-events: none;
+        }
         .hero-content {
+            position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 860px;
+            width: 100%;
+            animation: fadeUp 1s ease both;
         }
-
-        .hero .subtitle {
-            font-size: clamp(1rem, 3vw, 1.3rem);
-            color: var(--text-blanc);
-            margin: 1rem 0 2rem;
+        .eyebrow {
+            display: inline-flex;
+            margin-bottom: 1.4rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            color: var(--grey);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            margin: 0;
+            letter-spacing: 0.12em;
+            line-height: 0.95;
+        }
+        .subtitle {
+            margin: 1.75rem auto 1rem;
             font-style: italic;
+            font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+            max-width: 700px;
+            color: var(--ivory);
         }
-
-        .hero .date {
+        .date {
+            color: var(--grey);
+            margin-bottom: 2.2rem;
             font-size: 0.95rem;
-            color: var(--text-gris);
-            margin-bottom: 2rem;
-            letter-spacing: 0.5px;
         }
-
-        /* ============ BOUTONS ============ */
         .btn-cta {
-            display: inline-block;
-            padding: 12px 32px;
-            border: 2px solid var(--text-or);
-            color: var(--text-or);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.2rem;
+            border: 2px solid var(--gold);
+            border-radius: 999px;
             background: transparent;
-            text-decoration: none;
+            color: var(--gold);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-family: var(--font-texte);
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            border-radius: 2px;
-        }
-
-        .btn-cta:hover,
-        .btn-cta:focus {
-            background-color: var(--text-or);
-            color: var(--bg-color);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(212, 175, 55, 0.2);
-            outline: none;
-        }
-
-        .btn-cta:active {
-            transform: translateY(0);
-        }
-
-        /* ============ SECTIONS CONTENU ============ */
-        .experience {
-            padding: clamp(2rem, 5vw, 4rem);
-            max-width: 800px;
-            margin: 0 auto;
-            line-height:     <!-- Meta Tags SEO et Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez Résonances du Vivant, une exposition immersive présentant le travail artistique de Alain Mouret, Sonja Fasel et Alison Rikunali. Vernissage le 19 juin 2026.">
-    <meta name="keywords" content="Art contemporain, exposition, Résonances du Vivant, Alain Mouret, Sonja Fasel, Alison Rikunali, vernissage, art immersif">
-    <meta name="author" content="Événement Résonances du Vivant">
-    <meta name="og:title" content="Résonances du Vivant | Exposition d'Art">
-    <meta name="og:description" content="Une soirée qui vous emmènera du monde tangible à l'invisible.">
-    <meta name="og:type" content="website">
-    <meta content="https://votre-site.com/" property="og:url">
-    <meta content="https://votre-site.com/" property="og:site_name"><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <!-- Meta tags will be included by meta.php later, but we keep the structure open -->
-    <title>Résonances du Vivant | Exposition d'Art</title>
-    
-    <!-- Google Fonts Importation -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Style Minimaliste, Luxueux, Mystérieux -->
-    <style>
-        /* Variables de couleur */
-        :root {
-            --color-black-deep: #050505;
-            --color-gold: #d4af37;
-            --color-off-white: #f4f4f4;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: var(--color-black-deep);
-            color: var(--color-off-white);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden; /* Prévention du scroll horizontal */
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--color-gold);
-            text-align: center;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        /* --- Animations CSS --- */
-        /* Fade in général pour les éléments de contenu */
-        .animated-content {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        /* Classe ajoutée par JavaScript/PHP pour révéler l'élément */
-        .animated-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Style du CTA (Call to Action) */
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: transparent;
-            color: var(--color-gold);
-            border: 2px solid var(--color-gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-            margin-top: 20px;
+            letter-spacing: 0.2em;
             font-weight: 700;
+            transition: background var(--transition), color var(--transition), transform var(--transition);
         }
-
-        .cta-button:hover {
-            background-color: var(--color-gold);
-            color: var(--color-black-deep);
-            transform: scale(1.05);
+        .btn-cta:hover,
+        .btn-cta:focus-visible {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-3px);
         }
-
-        /* Grille des artistes (Utilisation de CSS Grid pour flexibilité) */
-        #artists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .artist-card {
-            text-align: center;
-            padding: 20px;
-            background-color: #0a0a0a;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .artist-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-        }
-
-        .artist-image-placeholder {
-            width: 100%;
-            padding-top: 100%; /* Pour maintenir un ratio 1:1 */
-            background-color: #1a1a1a;
-            background-image: url('assets/images/placeholder.jpg'); /* Placeholder */
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            .cta-button { padding: 10px 20px; }
-        }
-    </style>
-</head>
-<body class="animated-content visible">
-    <!-- Le contenu principal sera inclus ici -->1.8;
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
-        }
-
-        .artistes {
-            padding: clamp(2rem, 5vw, 4rem) 2rem;
-            background: linear-gradient(180deg, transparent, rgba(26, 26, 26, 0.5));
-        }
-
-        /* ============ GRILLE ARTISTES ============ */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            max-width: 1200px;
+        main {
+            width: min(95%, var(--max-width));
             margin: 0 auto;
-            padding: 0 1rem;
         }
-
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
+        .section {
+            padding: 4.5rem 0;
         }
-
-        .artiste-card {
-            transition: var(--transition);
-            animation: slideUp 0.8s ease-out;
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
         }
-
-        .artiste-card:hover {
-            transform: translateY(-8px);
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 3vw, 3.4rem);
+            margin: 0 auto 1rem;
+            max-width: 14ch;
+            text-align: center;
         }
-
-        .artiste-card img {
+        .section p {
+            margin: 0 auto;
+            max-width: 780px;
+            color: var(--ivory);
+            font-size: clamp(1rem, 1.1vw, 1.2rem);
+            text-align: center;
+        }
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.75rem;
+            margin-top: 2.5rem;
+        }
+        .artist-card {
+            display: grid;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform var(--transition), border-color var(--transition);
+        }
+        .artist-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .artist-card img {
             width: 100%;
-            height: auto;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            background-color: #111;
-            border: 1px solid var(--text-gris);
-            transition: var(--transition);
-            margin-bottom: 1rem;
         }
-
-        .artiste-card:hover img {
-            border-color: var(--text-or);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+        .artist-card h3 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
         }
-
-        .artiste-card .theme {
-            color: var(--text-gris);
-            font-style: italic;
+        .artist-card p {
+            margin: 0;
+            color: var(--grey);
+        }
+        .form-wrapper {
+            margin-top: 2rem;
+        }
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        .form-field {
+            display: grid;
+            gap: 0.5rem;
+        }
+        .form-field label {
+            font-weight: 600;
+            color: var(--ivory);
+        }
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 0.9rem;
+            background: rgba(10, 10, 10, 0.92);
+            color: var(--ivory);
+            font: inherit;
+            resize: vertical;
+        }
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+        }
+        .consent-checkbox {
+            align-items: flex-start;
+        }
+        .consent-checkbox label {
+            display: inline-flex;
+            gap: 0.75rem;
+            align-items: center;
+            font-weight: 400;
+            color: var(--ivory);
+        }
+        .consent-checkbox input {
+            width: 1rem;
+            height: 1rem;
+        }
+        .form-error {
+            margin: 0;
+            color: #ffb3b3;
             font-size: 0.95rem;
-            margin-top: 0.5rem;
         }
-
-        /* ============ ANIMATIONS ============ */
-        @keyframes fadeIn {
+        .form-message {
+            color: var(--gold);
+            font-weight: 600;
+            margin: 0;
+        }
+        footer {
+            padding: 3rem 0 2rem;
+            text-align: center;
+            color: var(--grey);
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+        @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(32px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @media (max-width: 980px) {
+            .artist-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
-
-        /* ============ RESPONSIVE & ACCESSIBILITÉ ============ */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
+        @media (max-width: 720px) {
+            .site-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
-
-        @media (max-width: 480px) {
+        @media (max-width: 720px) {
+            .artist-grid {
+                grid-template-columns: 1fr;
+            }
             .hero {
-                min-height: auto;
-                padding: 2rem 1rem;
+                padding: 3rem 1rem;
             }
-
-            .btn-cta {
-                padding: 10px 24px;
-                font-size: 0.85rem;
+            .section {
+                padding: 3rem 0;
             }
-
-            .artiste-card h3 {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-color: #f9f9f9;
-                --text-blanc: #1a1a1a;
-                --text-gris: #666;
-            }
-            
-            .hero {
-                background: radial-gradient(circle at center, #e8e8e8 0%, var(--bg-color) 70%);
-            }
-            
-            .artistes {
-                background: linear-gradient(180deg, transparent, rgba(200, 200, 200, 0.2));
+            .contact-form {
+                padding: 1.5rem;
             }
         }
     </style>
-
-    <?php include 'analytics.php'; ?>
+    <?php include __DIR__ . '/analytics.php'; ?>
 </head>

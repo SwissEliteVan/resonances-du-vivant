@@ -1,0 +1,49 @@
+# ============================================================
+# ROBOTS.TXT - Directives pour les moteurs de recherche
+# Résonances du Vivant
+# ============================================================
+
+# Tous les robots (Google, Bing, etc.)
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /assets/fonts/
+Disallow: /*.php$
+Disallow: /.htaccess
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*?*
+Crawl-delay: 1
+
+# Google (le plus permissif)
+User-agent: Googlebot
+Allow: /
+Disallow: /includes/
+Crawl-delay: 0
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /includes/
+Crawl-delay: 1
+
+# Bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap principal
+Sitemap: https://www.resonancesduvivant.ch/sitemap.xml
+
+# ============================================================
+# Durée de validité : 30 jours
+# Contact : contact@resonancesduvivant.ch
+# ============================================================
