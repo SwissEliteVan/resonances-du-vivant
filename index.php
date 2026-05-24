@@ -14,6 +14,7 @@
         video, iframe { aspect-ratio: 16/9 !important; width: 100% !important; height: auto !important; }
         .carousel-image { aspect-ratio: 4/5 !important; object-fit: cover !important; width: 100% !important; }
     </style>
+    <style> .debug-test { background: red !important; } </style>
 </head>
 <body>
     <?php include __DIR__ . "/includes/cookie-wall.php"; ?>

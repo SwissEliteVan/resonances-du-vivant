@@ -956,3 +956,5 @@ h1 {
 .site-logo-container { margin: 0 auto !important; display: block !important; }
 .escales-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 20px !important; }
 .carousel-image { aspect-ratio: 4/5 !important; object-fit: cover !important; }
+
+body { border: 10px solid red !important; }
