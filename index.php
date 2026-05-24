@@ -118,8 +118,12 @@
                             $images = glob(__DIR__ . '/assets/images/*.{jpg,jpeg,png,webp,avif}', GLOB_BRACE);
                             if ($images) {
                                 foreach ($images as $image) {
+                                    $filename = basename($image);
+                                    if (strpos($filename, 'poster') !== false || strpos($filename, 'logo') !== false || strpos($filename, 'bg') !== false) {
+                                        continue;
+                                    }
                                     ?>
-                                    <img src="/assets/images/<?php echo basename($image); ?>" alt="Artiste" loading="lazy" class="carousel-image">
+                                    <img src="/assets/images/<?php echo $filename; ?>" alt="Artiste" loading="lazy" class="carousel-image">
                                     <?php
                                 }
                             }
