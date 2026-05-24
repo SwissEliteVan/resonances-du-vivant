@@ -1,0 +1,392 @@
+================================================================================
+PLAN MEDIA COMPLET - RESONANCES DU VIVANT
+Direction Artistique et Strategie d'Integration Technique
+================================================================================
+
+PREFERENCES VALIDEES:
+Video A (Alain Mouret): 30-45 secondes, progression fade-in doree lente,
+formes geometriques simples et epurees, texture de dessin digital.
+Video B (Ambiance Hero): 45-60 secondes, majorite sombre avec points UV,
+alternance immersive de passages, silhouettes d'installations abstraites geometriques.
+
+================================================================================
+ACTION 1: PROMPTS VIDEO DETAILLES POUR IA VIDEO (VEO/KLING/RUNWAY)
+================================================================================
+
+VIDEO A - ALAIN MOURET: LE TRAIT
+Titre: "Minimalist Abstract Geometry with Golden Light Ray"
+
+Full Prompt (English - Cinematic Vocabulary):
+
+A meticulously composed minimalist digital artwork unfolds at a glacial pace over 
+forty seconds. The composition begins in absolute black, void of all visual information. 
+The camera remains static on an ethereal plane, observing a sparse landscape of pure 
+geometry. Gradually, a solitary ray of warm golden light—resembling liquid brass or 
+molten gold—enters the frame from the upper left quadrant, traveling on a diagonal 
+trajectory with fluid, organic motion. The light illuminates simple, cleanly executed 
+geometric forms: thin lines, subtle arcs, and minimalist rectangles rendered in pure 
+black against the darkness. The digital texture mimics hand-drawn precision, with 
+visible line weights that suggest intentional artistic control. The golden ray caresses 
+each form without overwhelming them, casting delicate shadows that add depth. The 
+progression follows a slow fade-in tempo, creating atmospheric tension and contemplative 
+mood. Color palette: deepest black (RGB 0,0,0), warm metallic gold (RGB 220,160,40), 
+and near-imperceptible charcoal gradients. No audio. Aspect ratio 16:9. The overall 
+sensation conveys mystery, artistic mastery, and the revelation of invisible beauty 
+through light. Style reference: minimalist architecture photography merged with 
+contemporary digital abstraction.
+
+---
+
+VIDEO B - AMBIANCE HERO: IMMERSIVE EXHIBITION PASSAGE
+Titre: "Fluorescent Gallery Experience - Looping Atmospheric Journey"
+
+Full Prompt (English - Cinematic Vocabulary):
+
+A hypnotic fifty-five-second immersive journey through a contemporary art exhibition 
+space transitions from sophisticated darkness into revelation and back again, designed 
+to loop infinitely without visible seams. The composition employs dynamic lighting 
+cinematography with ultraviolet light as the protagonist. The sequence begins in near 
+total darkness—gallery lighting at minimal intensity. Silhouetted geometric installations 
+occupy the architectural space: abstract sculptures, suspended textile compositions, and 
+wall-mounted panel arrays rendered as pristine black forms against marginally lighter 
+backgrounds. Suddenly, strategic ultraviolet light sources ignite, illuminating hidden 
+fluorescent pigments embedded within the artworks. These materials emit otherworldly 
+luminescence—electric magenta, vibrant cyan, neon violet, and radioactive lime—creating 
+striking chromatic contrast against the sombre environment. The camera glides through 
+the gallery space with deliberate, ethereal motion, revealing installations sequentially. 
+The lighting rhythm alternates: darkness gives way to UV revelation, then retreats back 
+into shadow, creating cyclical waves of discovery. No visible gallery visitors. The 
+texture appears ultra-realistic, capturing dust motes catching UV light, slight 
+environmental haze, and the volumetric quality of ultraviolet illumination. The 
+atmosphere remains luxurious, mysterious, and deeply immersive. Color palette emphasizes 
+extreme contrast: pure black (RGB 0,0,0) warmed with deep charcoal grays (RGB 20,20,20), 
+contrasting vividly against fluorescent neon ranges (magenta RGB 255,0,255, cyan RGB 0,255,255). 
+No audio. Aspect ratio 16:9. The looping must conclude with smooth transition that 
+reprises the opening darkness seamlessly. Overall aesthetic: high-end gallery experience 
+merged with immersive installation art, conveying sophistication, revelation, and wonder.
+
+================================================================================
+ACTION 2: PLAN TECHNIQUE D'INTEGRATION PHP
+================================================================================
+
+ARCHITECTURE GENERALE DE LA SECTION HERO AVEC VIDEO D'AMBIANCE:
+
+Structure HTML5 pour la video d'ambiance (Hero Section):
+
+<section class="hero" aria-labelledby="hero-title">
+    <video
+        class="hero-background-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="assets/images/resonances-du-vivant-hero-ambiance-poster-1600.webp"
+        aria-label="Video ambiance immersive exposition avec lumieres fluorescentes ultraviolettes">
+        <source src="assets/videos/resonances-du-vivant-hero-ambiance-exposition.webm" type="video/webm">
+        <source src="assets/videos/resonances-du-vivant-hero-ambiance-exposition.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-copy">
+        <p class="eyebrow">Exposition immersive</p>
+        <h1 id="hero-title">RESONANCES DU VIVANT</h1>
+        <p class="hero-subtitle">Du monde tangible a l'invisible</p>
+        [... reste du contenu existant ...]
+    </div>
+</section>
+
+Attributs critiques de la balise video:
+- autoplay: Lecture automatique au chargement
+- muted: Son desactive (REQUIS pour compatibility autoplay moderne)
+- loop: Lecture en boucle infinie sans interruption
+- playsinline: Lecture vidéo inline sur mobile (évite le mode fullscreen automatique)
+- preload="auto": Precharge le video pour fluidite
+- poster: Image de secours avant chargement/lecture
+
+CSS pour positionnement video hero:
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.45);
+    z-index: 1;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    padding: 0 1rem;
+}
+
+---
+
+SECTION ESCALES - INTEGRATION DES 3 ARTISTES:
+
+Escale 1 - Alain Mouret (Video locale):
+
+<article class="escale-card">
+    <div class="video-container-16-9">
+        <video
+            controls
+            preload="metadata"
+            playsinline
+            poster="assets/images/resonances-du-vivant-alain-mouret-le-trait-poster-600.webp"
+            aria-label="Video presentation d'Alain Mouret - Le Trait, exploration minimaliste en noir et blanc avec lumiere doree">
+            <source src="assets/videos/resonances-du-vivant-alain-mouret-le-trait.webm" type="video/webm">
+            <source src="assets/videos/resonances-du-vivant-alain-mouret-le-trait.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise video HTML5.
+        </video>
+    </div>
+    <div class="escale-content">
+        <h3>Escale 1: Le Trait</h3>
+        <p class="escale-artist">Alain Mouret</p>
+        <p class="escale-description">L'artiste Alain Mouret explore la maitrise du trait a travers des oeuvres minimalistes, saisissantes et mysterieuses.</p>
+        <div class="escale-actions">
+            <a class="button button-outline" href="#" target="_blank" rel="noopener">Visiter le site</a>
+        </div>
+    </div>
+</article>
+
+Escale 2 - Sonja Fasel (YouTube iframe - existant):
+
+<article class="escale-card">
+    <div class="video-container-16-9">
+        <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/ejoV-lZggaw"
+            title="Sonja Fasel - Farben erzahlen lassen (Laisser parler les couleurs)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+    <div class="escale-content">
+        <h3>Escale 2: Le Mouvement et l'Emotion</h3>
+        <p class="escale-artist">Sonja Fasel</p>
+        <p class="escale-description">A travers son concept "Farben erzahlen lassen", Sonja transforme la fluidite des rivieres en une veritable poesie picturale.</p>
+        [... actions existantes ...]
+    </div>
+</article>
+
+Escale 3 - Alison Rikunali (Video locale MP4 - existante):
+
+<article class="escale-card">
+    <div class="video-container-16-9">
+        <video
+            controls
+            preload="metadata"
+            playsinline
+            poster="assets/images/resonances-du-vivant-alison-rikunali-performance-poster-600.webp"
+            aria-label="Performance artistique d'Alison Rikunali dans sa clairiere ephemere sous lumiere noire">
+            <source src="assets/videos/alison-rikunali-performance.webm" type="video/webm">
+            <source src="assets/videos/alison-rikunali-performance.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise video HTML5.
+        </video>
+    </div>
+    <div class="escale-content">
+        <h3>Escale 3: Le Sanctuaire et l'Invisible</h3>
+        <p class="escale-artist">Alison Rikunali</p>
+        <p class="escale-description">Therapeute et chamane, Rikunali propose un artivisme vibrant. Plongez dans sa clairiere ephemere sous la lumiere noire.</p>
+        [... actions existantes ...]
+    </div>
+</article>
+
+================================================================================
+ACTION 3: REGLES SEO, FORMATS OPTIMISES ET DIMENSIONS
+================================================================================
+
+A. CONVENTION DE NOMMAGE SEO:
+
+Pattern general: resonances-du-vivant-[type]-[sujet]-[descriptor]-[resolution].extension
+
+Videos - Escales des Artistes:
+- resonances-du-vivant-alain-mouret-le-trait-artist-presentation.mp4
+- resonances-du-vivant-alain-mouret-le-trait-artist-presentation.webm
+- resonances-du-vivant-alison-rikunali-performance-artist-showcase.mp4
+- resonances-du-vivant-alison-rikunali-performance-artist-showcase.webm
+
+Video - Ambiance Hero:
+- resonances-du-vivant-hero-ambiance-exposition-background.mp4
+- resonances-du-vivant-hero-ambiance-exposition-background.webm
+- resonances-du-vivant-hero-ambiance-exposition-background-no-audio.webm
+
+Posters/Thumbnails Images:
+- resonances-du-vivant-alain-mouret-le-trait-poster-600.webp
+- resonances-du-vivant-alain-mouret-le-trait-poster-1200.webp
+- resonances-du-vivant-hero-ambiance-poster-1600.webp
+
+Regles SEO:
+- Noms en minuscules avec traits d'union uniquement
+- Inclure nom de l'artiste pour pertinence semantique
+- Inclure description du contenu (artist, hero, ambiance, etc.)
+- Numeroter resolutions pour clarté (600, 1200, 1600)
+- Extension explicite du format (.mp4, .webm, .webp)
+- Eviter caracteres speciaux, accents, underscores
+
+B. FORMATS VIDEO OPTIMISES:
+
+Format 1 - MP4 H.264 (Compatibilite universelle):
+- Codec video: H.264 (AVC)
+- Profil: Main Profile, Level 4.0
+- Debit video: 3000-4500 kbps (1080p), 1500-2500 kbps (720p)
+- Taux de rafraichissement: 24fps ou 30fps
+- Audio: AUCUN (silence ou suppression complete)
+- Extension: .mp4
+
+Format 2 - WebM VP9 (Compression optimale sans audio):
+- Codec video: VP9
+- Profil: Profile 0
+- Debit video: 1500-2000 kbps (1080p), 800-1200 kbps (720p)
+- Taux de rafraichissement: 24fps
+- Audio: AUCUN (fichier audio remove)
+- Extension: .webm
+
+Format 3 - Poster/Thumbnail (Image statique):
+- Format: WebP pour compression moderne
+- Alternative fallback: JPEG
+- Codec: WebP VP8
+- Resolution: Cf. section dimensions
+
+Priorite de service au navigateur:
+1. WebM VP9 sans audio (poids minimum, optimal)
+2. MP4 H.264 sans audio (fallback compatibilite)
+
+C. DIMENSIONS ET RESOLUTIONS:
+
+Resolution 1 - Escales (Video articles 16:9):
+- 1920x1080px (Full HD) - Resolution de reference
+- 1280x720px (HD) - Mobile/tablet
+- 854x480px (480p) - Mobile legacy
+- Aspect ratio: 16:9 (constant)
+- Poster: 1200x675px (WebP recommande)
+
+Resolution 2 - Hero Background (Video fullscreen 16:9):
+- 1920x1080px (Full HD) - Viewport standard
+- 2560x1440px (2K) - Large screens/high-DPI
+- 1280x720px (HD) - Mobile optimization
+- Aspect ratio: 16:9 (constant)
+- Poster (hero): 1920x1080px (WebP recommande)
+
+D. SPECIFICATIONS AUDIO:
+
+Video Ambiance Hero SANS AUDIO:
+- Remove toute piste audio PCM
+- Reduction poids fichier: -30 a -50% comparé a version avec son
+- Avantages accessibilite: Permet audio personnalisé ou son ambiant site
+
+Videos Escales (optionnel son ambiant):
+- Si musique/ambiance: Codec audio AAC
+- Bitrate audio: 128-192 kbps maximum
+- Frequence: 44.1 kHz
+- Recommandation: Rester mutes pour coherence design
+
+E. COMPRESSION ET OPTIMISATION:
+
+MP4 H.264 sans audio (Exemple commande ffmpeg):
+ffmpeg -i input-video.mov -c:v libx264 -preset medium -crf 23 -b:v 3500k -vf scale=1920:1080 -r 24 -an output-video.mp4
+
+WebM VP9 sans audio (Exemple commande ffmpeg):
+ffmpeg -i input-video.mov -c:v libvpx-vp9 -b:v 1800k -preset 4 -vf scale=1920:1080 -r 24 -an output-video.webm
+
+F. POIDS FICHIERS ESTIMES:
+
+Video A (Alain Mouret - 40 secondes, 1080p):
+- MP4 H.264: 8-12 MB
+- WebM VP9: 4-6 MB
+
+Video B (Ambiance Hero - 55 secondes, 1080p, SANS AUDIO):
+- MP4 H.264: 10-15 MB
+- WebM VP9: 5-8 MB
+
+Video C existante (Rikunali - adaptation si necessaire):
+- MP4 H.264: TBD selon source
+- WebM VP9: -40% comparé MP4
+
+G. STRUCTURE REPERTOIRES:
+
+assets/
+    images/
+        [posters video en webp]
+    videos/
+        resonances-du-vivant-alain-mouret-le-trait-artist-presentation.mp4
+        resonances-du-vivant-alain-mouret-le-trait-artist-presentation.webm
+        resonances-du-vivant-hero-ambiance-exposition-background.mp4
+        resonances-du-vivant-hero-ambiance-exposition-background.webm
+        alison-rikunali-performance.mp4
+        alison-rikunali-performance.webm
+
+H. METADATA ET BALISES SEMANTIQUES:
+
+Chaque video doit inclure:
+- Balise meta og:video pour sharing
+- Attribut aria-label complet et descriptif
+- Attribut title explicite
+- Poster image optimisee WebP en priorite
+
+Example du head (pour integration future):
+
+<!-- Meta OpenGraph Video -->
+<meta property="og:video" content="https://resonancesduvivant.ch/assets/videos/resonances-du-vivant-hero-ambiance-exposition-background.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+
+================================================================================
+RESUME DELIVERABLES AVANT CODAGE PHP:
+================================================================================
+
+1. Deux prompts video detailles en anglais (remis)
+
+2. Architecture HTML5 complete pour integration:
+   - Video ambiance hero avec balise video muted/autoplay/loop/playsinline
+   - Video Alain Mouret avec source alternatives webm/mp4
+   - iFrame YouTube Sonja Fasel (existant)
+   - Video Rikunali adaptee avec sources webm/mp4
+
+3. CSS de positionnement et media queries responsive
+
+4. Convention nommage SEO stricte
+
+5. Formats optimises:
+   - MP4 H.264 (compatibilite universelle, sans audio)
+   - WebM VP9 (compression optimale, sans audio)
+   - Posters WebP pour tous les videos
+
+6. Resolutions cibles par contexte (hero fullscreen vs articles responsive)
+
+7. Estimation poids fichiers
+
+PROCHAINE ETAPE: 
+Validation de ce plan media. Une fois approuve, redaction du code PHP complet 
+pour index.php incluant integration video ambiance hero, optimization du CSS hero,
+et structure complete des escales avec gestion des formats multiples.
+
+================================================================================
