@@ -111,62 +111,7 @@
         <section class="artists-carousels-section" aria-labelledby="artists-gallery-title">
             <h2 id="artists-gallery-title">Galerie des Artistes</h2>
             <div class="artists-carousels-grid">
-                <article class="artist-carousel-card">
-                    <div class="escale-carousel-container">
-                        <div class="escale-carousel" data-carousel="carousel-1">
-                            <img src="assets/images/alain-mouret-1.jpg" alt="Alain Mouret - Oeuvre 1" loading="lazy">
-                            <img src="assets/images/alain-mouret-2.jpg" alt="Alain Mouret - Oeuvre 2" loading="lazy">
-                            <img src="assets/images/alain-mouret-3.jpg" alt="Alain Mouret - Oeuvre 3" loading="lazy">
-                            <img src="assets/images/alain-mouret-4.jpg" alt="Alain Mouret - Oeuvre 4" loading="lazy">
-                            <img src="assets/images/alain-mouret-5.jpg" alt="Alain Mouret - Oeuvre 5" loading="lazy">
-                        </div>
-                        <button class="carousel-btn carousel-prev" data-carousel="carousel-1" aria-label="Image precedente">◀</button>
-                        <button class="carousel-btn carousel-next" data-carousel="carousel-1" aria-label="Image suivante">▶</button>
-                    </div>
-                    <div class="artist-carousel-info">
-                        <h3>Alain Mouret</h3>
-                        <p class="artist-theme">Le Trait</p>
-                        <p class="artist-bio">L'artiste Alain Mouret explore la maitrise du trait a travers des oeuvres minimalistes, saisissantes et mysterieuses.</p>
-                    </div>
-                </article>
-
-                <article class="artist-carousel-card">
-                    <div class="escale-carousel-container">
-                        <div class="escale-carousel" data-carousel="carousel-2">
-                            <img src="assets/images/sonja-fasel-1.jpg" alt="Sonja Fasel - Oeuvre 1" loading="lazy">
-                            <img src="assets/images/sonja-fasel-2.jpg" alt="Sonja Fasel - Oeuvre 2" loading="lazy">
-                            <img src="assets/images/sonja-fasel-3.jpg" alt="Sonja Fasel - Oeuvre 3" loading="lazy">
-                            <img src="assets/images/sonja-fasel-4.jpg" alt="Sonja Fasel - Oeuvre 4" loading="lazy">
-                            <img src="assets/images/sonja-fasel-5.jpg" alt="Sonja Fasel - Oeuvre 5" loading="lazy">
-                        </div>
-                        <button class="carousel-btn carousel-prev" data-carousel="carousel-2" aria-label="Image precedente">◀</button>
-                        <button class="carousel-btn carousel-next" data-carousel="carousel-2" aria-label="Image suivante">▶</button>
-                    </div>
-                    <div class="artist-carousel-info">
-                        <h3>Sonja Fasel</h3>
-                        <p class="artist-theme">Le Mouvement et l'Emotion</p>
-                        <p class="artist-bio">A travers son concept "Farben erzahlen lassen", Sonja transforme la fluidite des rivieres en une veritable poesie picturale.</p>
-                    </div>
-                </article>
-
-                <article class="artist-carousel-card">
-                    <div class="escale-carousel-container">
-                        <div class="escale-carousel" data-carousel="carousel-3">
-                            <img src="assets/images/alison-rikunali-1.jpg" alt="Alison Rikunali - Oeuvre 1" loading="lazy">
-                            <img src="assets/images/alison-rikunali-2.jpg" alt="Alison Rikunali - Oeuvre 2" loading="lazy">
-                            <img src="assets/images/alison-rikunali-3.jpg" alt="Alison Rikunali - Oeuvre 3" loading="lazy">
-                            <img src="assets/images/alison-rikunali-4.jpg" alt="Alison Rikunali - Oeuvre 4" loading="lazy">
-                            <img src="assets/images/alison-rikunali-5.jpg" alt="Alison Rikunali - Oeuvre 5" loading="lazy">
-                        </div>
-                        <button class="carousel-btn carousel-prev" data-carousel="carousel-3" aria-label="Image precedente">◀</button>
-                        <button class="carousel-btn carousel-next" data-carousel="carousel-3" aria-label="Image suivante">▶</button>
-                    </div>
-                    <div class="artist-carousel-info">
-                        <h3>Alison Rikunali</h3>
-                        <p class="artist-theme">Le Sanctuaire et l'Invisible</p>
-                        <p class="artist-bio">Therapeute et chamane, Rikunali propose un artivisme vibrant. Plongez dans sa clairiere ephemere sous la lumiere noire.</p>
-                    </div>
-                </article>
+                <?php include __DIR__ . "/includes/artists-carousel.php"; ?>
             </div>
         </section>
 
@@ -213,6 +158,6 @@
 
     <?php include __DIR__ . "/includes/consent-banner.php"; ?>
     <?php include __DIR__ . "/includes/footer.php"; ?>
-    <script src="assets/js/carousel.js" defer></script>
+    <script src="assets/js/carousel-touchable.js" defer></script>
 </body>
 </html>

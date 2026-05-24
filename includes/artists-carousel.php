@@ -36,16 +36,39 @@ foreach ($artists as $artist) {
     ?>
 <section class="artist-section">
     <h2><?php echo htmlspecialchars($artistTitle); ?></h2>
-    <div class="artist-carousel">
-        <?php foreach ($images as $imagePath): ?>
-            <?php
-            // Extraire le nom du fichier et générer l'alt texte
-            $filename = basename($imagePath);
-            $nameWithoutExt = pathinfo($filename, PATHINFO_FILENAME);
-            $altText = ucwords(str_replace('-', ' ', $nameWithoutExt));
-            ?>
-        <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($altText); ?>" loading="lazy">
-        <?php endforeach; ?>
+    <div class="artist-carousel-wrapper">
+        <div class="artist-carousel" role="region" aria-label="Galerie des oeuvres de <?php echo htmlspecialchars($artistTitle); ?>">
+            <?php foreach ($images as $imagePath): ?>
+                <?php
+                // Extraire le nom du fichier et générer l'alt texte
+                $filename = basename($imagePath);
+                $nameWithoutExt = pathinfo($filename, PATHINFO_FILENAME);
+                $altText = ucwords(str_replace('-', ' ', $nameWithoutExt));
+                
+                // Vérification de l'existence du fichier
+                if (file_exists($imagePath)) {
+                    // Image existe : affichage normal
+                ?>
+                    <img
+                        src="<?php echo htmlspecialchars($imagePath); ?>"
+                        alt="<?php echo htmlspecialchars($altText); ?>"
+                        loading="lazy"
+                        class="carousel-image">
+                <?php
+                } else {
+                    // Image n'existe pas : afficher div de debug avec bordure rouge
+                ?>
+                    <div class="carousel-image-error" title="Image manquante">
+                        <div class="error-content">
+                            <span class="error-icon">⚠️</span>
+                            <p class="error-path"><?php echo htmlspecialchars($imagePath); ?></p>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
 <?php
