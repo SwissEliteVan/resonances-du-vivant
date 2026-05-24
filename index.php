@@ -111,7 +111,34 @@
         <section class="artists-carousels-section" aria-labelledby="artists-gallery-title">
             <h2 id="artists-gallery-title">Galerie des Artistes</h2>
             <div class="artists-carousels-grid">
-                <?php include __DIR__ . "/includes/artists-carousel.php"; ?>
+                <?php
+                $artistDirs = glob(__DIR__ . '/assets/images/artists/*', GLOB_ONLYDIR);
+                if ($artistDirs) {
+                    foreach ($artistDirs as $dir) {
+                        $artistName = basename($dir);
+                        $portraitPathServer = $dir . '/portrait.webp';
+                        
+                        if (file_exists($portraitPathServer)) {
+                            $artistTitle = ucwords(str_replace('-', ' ', $artistName));
+                            $portraitPathWeb = '/assets/images/artists/' . $artistName . '/portrait.webp';
+                            ?>
+                            <section class="artist-section">
+                                <h2><?php echo htmlspecialchars($artistTitle); ?></h2>
+                                <div class="artist-carousel-wrapper">
+                                    <div class="artist-carousel" role="region" aria-label="Galerie des oeuvres de <?php echo htmlspecialchars($artistTitle); ?>">
+                                        <img
+                                            src="<?php echo htmlspecialchars($portraitPathWeb); ?>"
+                                            alt="<?php echo htmlspecialchars($artistTitle); ?>"
+                                            loading="lazy"
+                                            class="carousel-image">
+                                    </div>
+                                </div>
+                            </section>
+                            <?php
+                        }
+                    }
+                }
+                ?>
             </div>
         </section>
 
