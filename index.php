@@ -35,16 +35,16 @@
             <h2 id="escales-title">Les escales du voyage</h2>
             <div class="escales-grid">
                 <article class="escale-card">
-                    <div class="escale-carousel-container">
-                        <div class="escale-carousel">
-                            <img src="assets/images/alain-mouret-1.jpg" alt="Alain Mouret - Image 1" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alain-mouret-2.jpg" alt="Alain Mouret - Image 2" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alain-mouret-3.jpg" alt="Alain Mouret - Image 3" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alain-mouret-4.jpg" alt="Alain Mouret - Image 4" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alain-mouret-5.jpg" alt="Alain Mouret - Image 5" width="600" height="600" loading="lazy">
-                        </div>
-                        <button class="carousel-btn carousel-prev" aria-label="Image precedente" data-carousel="carousel-1">Precedent</button>
-                        <button class="carousel-btn carousel-next" aria-label="Image suivante" data-carousel="carousel-1">Suivant</button>
+                    <div class="video-container-16-9">
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                            poster="assets/images/alain-mouret-presentation-poster.webp"
+                            aria-label="Presentation video d'Alain Mouret - Exploration du trait et minimalisme, en attente de contenu futur">
+                            <source src="" type="video/mp4">
+                            Contenu video a venir.
+                        </video>
                     </div>
                     <div class="escale-content">
                         <h3>Escale 1 : Le Trait</h3>
@@ -57,21 +57,23 @@
                 </article>
 
                 <article class="escale-card">
-                    <div class="escale-carousel-container">
-                        <div class="escale-carousel">
-                            <img src="assets/images/sonja-fasel-1.jpg" alt="Sonja Fasel - Image 1" width="600" height="600" loading="lazy">
-                            <img src="assets/images/sonja-fasel-2.jpg" alt="Sonja Fasel - Image 2" width="600" height="600" loading="lazy">
-                            <img src="assets/images/sonja-fasel-3.jpg" alt="Sonja Fasel - Image 3" width="600" height="600" loading="lazy">
-                            <img src="assets/images/sonja-fasel-4.jpg" alt="Sonja Fasel - Image 4" width="600" height="600" loading="lazy">
-                            <img src="assets/images/sonja-fasel-5.jpg" alt="Sonja Fasel - Image 5" width="600" height="600" loading="lazy">
-                        </div>
-                        <button class="carousel-btn carousel-prev" aria-label="Image precedente" data-carousel="carousel-2">Precedent</button>
-                        <button class="carousel-btn carousel-next" aria-label="Image suivante" data-carousel="carousel-2">Suivant</button>
+                    <div class="video-container-16-9">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/ejoV-lZggaw"
+                            title="Sonja Fasel - Farben erzahlen lassen (Laisser parler les couleurs)"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
                     </div>
                     <div class="escale-content">
                         <h3>Escale 2 : Le Mouvement et l'Emotion</h3>
                         <p class="escale-artist">Sonja Fasel</p>
-                        <p class="escale-description">A travers son concept "Farben erzahlen lassen" (Laisser parler les couleurs), Sonja transforme la fluidite des rivieres et le temps qui passe en une veritable poesie picturale.</p>
+                        <p class="escale-description">A travers son concept "Farben erzahlen lassen", Sonja transforme la fluidite des rivieres en une veritable poesie picturale.</p>
                         <div class="escale-actions">
                             <a class="button button-outline" href="#" target="_blank" rel="noopener">Decouvrir sa boutique</a>
                             <a class="button button-outline" href="mailto:contact@resonancesduvivant.ch">Contacter l'artiste</a>
@@ -80,21 +82,22 @@
                 </article>
 
                 <article class="escale-card">
-                    <div class="escale-carousel-container">
-                        <div class="escale-carousel">
-                            <img src="assets/images/alison-rikunali-1.jpg" alt="Alison Rikunali - Image 1" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alison-rikunali-2.jpg" alt="Alison Rikunali - Image 2" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alison-rikunali-3.jpg" alt="Alison Rikunali - Image 3" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alison-rikunali-4.jpg" alt="Alison Rikunali - Image 4" width="600" height="600" loading="lazy">
-                            <img src="assets/images/alison-rikunali-5.jpg" alt="Alison Rikunali - Image 5" width="600" height="600" loading="lazy">
-                        </div>
-                        <button class="carousel-btn carousel-prev" aria-label="Image precedente" data-carousel="carousel-3">Precedent</button>
-                        <button class="carousel-btn carousel-next" aria-label="Image suivante" data-carousel="carousel-3">Suivant</button>
+                    <div class="video-container-16-9">
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                            poster="assets/images/alison-rikunali-performance-poster.webp"
+                            width="100%"
+                            aria-label="Performance artistique d'Alison Rikunali dans sa clairiere ephemere sous lumiere noire">
+                            <source src="assets/videos/alison-rikunali-performance.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise video HTML5.
+                        </video>
                     </div>
                     <div class="escale-content">
                         <h3>Escale 3 : Le Sanctuaire et l'Invisible</h3>
                         <p class="escale-artist">Alison "Rikunali"</p>
-                        <p class="escale-description">Therapeute et chamane, Rikunali propose un artivisme vibrant. Plongez dans sa clairiere ephemere ou ses toiles fluorescentes s'illuminent dans l'obscurite pour reveler les trames energetiques de la foret.</p>
+                        <p class="escale-description">Therapeute et chamane, Rikunali propose un artivisme vibrant. Plongez dans sa clairiere ephemere sous la lumiere noire.</p>
                         <div class="escale-actions">
                             <a class="button button-outline" href="https://www.instagram.com/rikunali" target="_blank" rel="noopener">Suivre @Rikunali</a>
                             <a class="button button-outline" href="mailto:contact@resonancesduvivant.ch">Contacter l'artiste</a>
