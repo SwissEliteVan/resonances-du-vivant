@@ -15,8 +15,39 @@
     <?php include __DIR__ . "/includes/header.php"; ?>
 
     <main class="page-shell">
+        <?php
+        // --- LE MOTEUR DE RECHERCHE AUTOMATIQUE (Images & Logo) ---
+        // Ce code scanne ton dossier une seule fois et trie tout intelligemment
+        $fichiers_images = glob(__DIR__ . '/assets/images/*.*');
+        $logoUrl = '';
+        $images_carrousel = [];
+
+        if ($fichiers_images) {
+            foreach ($fichiers_images as $fichier) {
+                $nom = basename($fichier);
+                $ext = strtolower(pathinfo($nom, PATHINFO_EXTENSION));
+                
+                // 1. Trouver le logo (cherche le mot "logo" dans le nom du fichier)
+                if (stripos($nom, 'logo') !== false && in_array($ext, ['png', 'svg', 'webp', 'avif', 'jpg'])) {
+                    if (empty($logoUrl)) $logoUrl = '/assets/images/' . $nom;
+                }
+                
+                // 2. Trouver les oeuvres pour le carrousel (Uniquement AVIF, sans le mot "poster" ni "logo")
+                if ($ext === 'avif' && stripos($nom, 'poster') === false && stripos($nom, 'logo') === false) {
+                    $images_carrousel[] = '/assets/images/' . $nom;
+                }
+            }
+        }
+        ?>
+
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-copy">
+                <?php if (!empty($logoUrl)): ?>
+                <div class="site-logo-container" style="text-align: center; margin-bottom: 30px; max-width: 250px;">
+                    <img src="<?php echo $logoUrl; ?>" alt="Logo Résonances du Vivant" style="width: 100%; height: auto; object-fit: contain;">
+                </div>
+                <?php endif; ?>
+
                 <p class="eyebrow">Exposition immersive</p>
                 <h1 id="hero-title">RESONANCES DU VIVANT</h1>
                 <p class="hero-subtitle">Du monde tangible à l'invisible</p>
@@ -114,10 +145,13 @@
                 <section class="artist-section">
                     <div class="artist-carousel-wrapper">
                         <div class="artist-carousel" role="region" aria-label="Galerie des oeuvres">
-                            <img src="/assets/images/NOM-DE-MON-IMAGE-1.jpg" alt="Artiste" loading="lazy" class="carousel-image">
-                            <img src="/assets/images/NOM-DE-MON-IMAGE-2.jpg" alt="Artiste" loading="lazy" class="carousel-image">
-                            <img src="/assets/images/NOM-DE-MON-IMAGE-3.jpg" alt="Artiste" loading="lazy" class="carousel-image">
-                            <img src="/assets/images/NOM-DE-MON-IMAGE-4.jpg" alt="Artiste" loading="lazy" class="carousel-image">
+                            <?php if (!empty($images_carrousel)): ?>
+                                <?php foreach ($images_carrousel as $img_src): ?>
+                                    <img src="<?php echo $img_src; ?>" alt="Oeuvre de la galerie" loading="lazy" class="carousel-image">
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <p style="color:#d4af37; text-align:center; padding: 20px;">Les oeuvres sont en cours d'accrochage...</p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </section>
@@ -158,7 +192,7 @@
 
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact</h2>
-            <p>Pour toute demande de collaboration ou d&apos;information sur l&apos;événement.</p>
+            <p>Pour toute demande de collaboration ou d'information sur l'événement.</p>
             <p>Telephone : <a href="tel:+41788238950">078 823 89 50</a></p>
             <p>Email : <a href="mailto:contact@resonancesduvivant.ch">contact@resonancesduvivant.ch</a></p>
             <p>Site : <a href="https://www.resonancesduvivant.ch" target="_blank" rel="noopener noreferrer">www.resonancesduvivant.ch</a></p>
