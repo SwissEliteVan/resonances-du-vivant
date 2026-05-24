@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css?v=<?php echo filemtime('assets/css/style.css'); ?>">
-    <style>
-        .site-logo-container { margin: 0 auto !important; display: block !important; max-width: 250px !important; }
-        video, iframe { aspect-ratio: 16/9 !important; width: 100% !important; height: auto !important; }
-        .carousel-image { aspect-ratio: 4/5 !important; object-fit: cover !important; width: 100% !important; }
-    </style>
-    <style> .debug-test { background: red !important; } </style>
 </head>
 <body>
     <?php include __DIR__ . "/includes/cookie-wall.php"; ?>
@@ -49,8 +43,8 @@
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-copy">
                 <?php if (!empty($logoUrl)): ?>
-                <div class="site-logo-container" style="text-align: center; margin-bottom: 30px; max-width: 250px;">
-                    <img src="<?php echo $logoUrl; ?>" alt="Logo Résonances du Vivant" style="width: 100%; height: auto; object-fit: contain;">
+            <div class="site-logo-container">
+                <img src="<?php echo $logoUrl; ?>" alt="Logo Résonances du Vivant">
                 </div>
                 <?php endif; ?>
 
