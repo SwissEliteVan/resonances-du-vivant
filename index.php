@@ -66,7 +66,7 @@
             <div class="timeline-list">
                 <article class="timeline-step">
                     <h3>Accueil et Carnets de Voyage</h3>
-                    <p>Le galeriste et maitre des lieux, Ueli Affolter, vous ouvre les portes de la galerie. Degustation de specialites locales pour marquer l'ancrage de l'exposition.</p>
+                    <p>Le galeriste et maitre des lieux, Ueli Affolter, vous ouvre les portes de la galerie pour cette exposition.</p>
                 </article>
                 <article class="timeline-step">
                     <h3>La Poesie des Couleurs</h3>
