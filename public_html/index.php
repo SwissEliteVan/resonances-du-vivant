@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <?php include __DIR__ . "/includes/cookie-wall.php"; ?>
     <?php include __DIR__ . "/includes/header.php"; ?>
 
     <main class="page-shell">
