@@ -13,6 +13,16 @@
     <!-- GA4 Config -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTYB74MCCQ"></script>
     <script>
+        /* 
+        URL de tracking officielles (UTM) à utiliser pour vos campagnes :
+        - QR Code flyer : https://www.resonancesduvivant.ch/?utm_source=flyer_grandcour&utm_medium=qr_code&utm_campaign=resonances_du_vivant
+        - Instagram : https://www.resonancesduvivant.ch/?utm_source=instagram&utm_medium=social&utm_campaign=resonances_du_vivant
+        - Signature e-mail : https://www.resonancesduvivant.ch/?utm_source=email&utm_medium=signature&utm_campaign=resonances_du_vivant
+        - Lien Alain Mouret : https://www.resonancesduvivant.ch/?utm_source=alain_mouret&utm_medium=social&utm_campaign=expo_resonances_2026
+        - Lien Sonja Fasel : https://www.resonancesduvivant.ch/?utm_source=sonja_fasel&utm_medium=social&utm_campaign=expo_resonances_2026
+        - Lien Alison Rikunali : https://www.resonancesduvivant.ch/?utm_source=alison_rikunali&utm_medium=social&utm_campaign=expo_resonances_2026
+        */
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
 
@@ -480,7 +490,7 @@
         <div class="nav-container">
             <a href="#hero" class="nav-link">Accueil</a>
             <a href="#vernissage" class="nav-link">Vernissage</a>
-            <a href="#galerie" class="nav-link">La Galerie</a>
+            <a href="#galerie" class="nav-link" onclick="trackGalerieClick()">La Galerie</a>
             <a href="#artistes" class="nav-link">Artistes</a>
             <a href="#programme" class="nav-link">Programme</a>
             <a href="#contact" class="nav-link">Contact</a>
@@ -742,7 +752,6 @@
 
         function trackArtistClick(artistId) {
             const events = {
-                'ueli': 'view_artist_ueli',
                 'alain': 'view_artist_alain',
                 'sonja': 'view_artist_sonja',
                 'alison': 'view_artist_alison'
@@ -752,6 +761,13 @@
                     'event_category': 'artist_interaction'
                 });
             }
+        }
+
+        function trackGalerieClick() {
+            gtag('event', 'view_galerie', {
+                'event_category': 'navigation',
+                'event_label': 'Clic nav Galerie'
+            });
         }
 
         // --- 3. Scroll Depth Tracking ---
