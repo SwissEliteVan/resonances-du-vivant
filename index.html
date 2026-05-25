@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résonances du Vivant - Exposition d'art</title>
 
+    <!-- SEO & Open Graph -->
+    <meta name="description" content="Découvrez l'exposition d'art immersif Résonances du Vivant à la Galerie de Grandcour du 19 juin au 5 juillet 2026. Du monde tangible à l'invisible.">
+    <meta property="og:title" content="Résonances du Vivant - Exposition d'art à Grandcour">
+    <meta property="og:description" content="Découvrez l'exposition d'art immersif Résonances du Vivant à la Galerie de Grandcour (19 juin - 5 juillet 2026).">
+    <meta property="og:image" content="https://www.resonancesduvivant.ch/assets/images/hero-bg.webp">
+    <meta property="og:url" content="https://www.resonancesduvivant.ch/">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -503,9 +513,9 @@
             <img src="assets/images/logo.webp" alt="Logo Résonances du Vivant">
         </div>
         <h1>RÉSONANCES DU VIVANT</h1>
-        <span class="lang-de">Von der greifbaren Welt zum Unsichtbaren</span>
         
-        <p class="subtitle">Du monde tangible à l'invisible</p>
+        <p class="subtitle" style="margin-bottom: 0.5rem;">Du monde tangible à l'invisible</p>
+        <span class="lang-de" style="margin-bottom: 2rem;">Von der greifbaren Welt zum Unsichtbaren</span>
         
         <div class="event-details">
             <p>19 juin — 5 juillet 2026</p>
@@ -548,6 +558,23 @@
         </div>
     </section>
 
+    <!-- Section Galerie -->
+    <section id="galerie">
+        <div class="section-inner" style="text-align: center; max-width: 800px;">
+            <h2 class="section-title">
+                La Galerie
+                <span class="lang-de">Die Galerie</span>
+            </h2>
+            <div class="vernissage-content">
+                <p>L'exposition prend place au cœur de la Galerie de Grandcour, un espace intimiste dédié à l'expression artistique et à la rencontre.</p>
+                <span class="lang-de" style="margin-bottom: 1.5rem;">Die Ausstellung findet im Herzen der Galerie de Grandcour statt, einem intimen Raum für künstlerischen Ausdruck und Begegnung.</span>
+                
+                <p style="font-weight: 600; color: var(--gold); margin-top: 2rem;">Hôte de l'événement : Ueli Affolter</p>
+                <span class="lang-de">Gastgeber der Veranstaltung: Ueli Affolter</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Artistes -->
     <section id="artistes">
         <h2 class="section-title">
@@ -569,6 +596,7 @@
                     <button class="carousel-btn next" onclick="moveCarousel(event, this, 1)">&#10095;</button>
                 </div>
                 <div class="artist-info">
+                    <div style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 5px; color: var(--text-main);">Alain Mouret</div>
                     <h3>Le Trait</h3>
                     <span class="lang-de">Thema: Der Strich</span>
                     <p>Dessin, trait, poésie académique.</p>
@@ -589,6 +617,7 @@
                     <button class="carousel-btn next" onclick="moveCarousel(event, this, 1)">&#10095;</button>
                 </div>
                 <div class="artist-info">
+                    <div style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 5px; color: var(--text-main);">Sonja Fasel</div>
                     <h3>Escale : Le Mouvement et l'Émotion</h3>
                     <span class="lang-de">Escale: Bewegung und Emotion</span>
                     <p>Laisser parler les couleurs.</p>
@@ -609,6 +638,7 @@
                     <button class="carousel-btn next" onclick="moveCarousel(event, this, 1)">&#10095;</button>
                 </div>
                 <div class="artist-info">
+                    <div style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 5px; color: var(--text-main);">Alison "Rikunali"</div>
                     <h3>Escale : Le Sanctuaire et l'Invisible</h3>
                     <span class="lang-de">Escale: Das Heiligtum und das Unsichtbare</span>
                     <p>Artivisme et toiles fluorescentes s'illuminant sous lumière noire.</p>
@@ -691,11 +721,12 @@
     <div id="cookie-banner">
         <div class="cookie-text">
             Nous utilisons des cookies analytiques pour améliorer votre expérience sur notre site. 
-            Vous pouvez accepter ou refuser ces cookies.
+            Vous pouvez accepter ou refuser ces cookies.<br>
+            <span class="lang-de" style="display: inline; margin-top: 5px;">Wir verwenden Analyse-Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Sie können diese Cookies akzeptieren oder ablehnen.</span>
         </div>
         <div class="cookie-buttons">
-            <button class="btn-cookie" onclick="refuseCookies()">Refuser</button>
-            <button class="btn-cookie accept" onclick="acceptCookies()">Accepter</button>
+            <button class="btn-cookie" onclick="refuseCookies()">Refuser / Ablehnen</button>
+            <button class="btn-cookie accept" onclick="acceptCookies()">Accepter / Akzeptieren</button>
         </div>
     </div>
 
