@@ -32,6 +32,9 @@ type nul > "assets\videos\ambiance.mp4"
 :: Création index
 type nul > "index.html"
 
+:: Création fichier PDF espace réservé
+type nul > "programme.pdf"
+
 echo Operation terminee.
 echo Le dossier va s'ouvrir automatiquement.
 pause
