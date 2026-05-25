@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résonances du Vivant | Exposition</title>
+
+    <!-- Google Analytics 4 Consent Mode & Tag -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Configuration par défaut : refus du stockage analytique (conformité nLPD/RGPD)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTYB74MCCQ"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-TTYB74MCCQ');
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Design System Variables */
+        :root {
+            --bg-color: #0a0a0a;
+            --bg-section: #050505;
+            --bg-card: #121212;
+            --text-main: #f4f4f4;
+            --text-muted: #b0b0b0;
+            --gold: #d4af37;
+            --gold-hover: #f1cf5f;
+            --whatsapp: #25D366;
+            --transition-speed: 0.3s;
+        }
+
+        /* Reset global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lang-de {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color var(--transition-speed);
+        }
+
+        nav a:hover {
+            color: var(--gold-hover);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            nav ul {
+                margin-top: 1rem;
+                gap: 1.5rem;
+                overflow-x: auto;
+                width: 100%;
+                justify-content: flex-start;
+                padding-bottom: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+            }
+            nav ul::-webkit-scrollbar {
+                height: 2px;
+            }
+            nav ul::-webkit-scrollbar-thumb {
+                background: var(--gold);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 5% 80px;
+            background: radial-gradient(circle at center, rgba(18, 18, 18, 1) 0%, var(--bg-color) 100%);
+        }
+
+        .hero-logo {
+            max-width: 150px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-top: 1.5rem;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-info {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            padding: 0.8rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--whatsapp);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Sections Common */
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background-color: var(--bg-section);
+            max-width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        /* Vernissage */
+        .vernissage-box {
+            background-color: var(--bg-card);
+            padding: 3rem 4rem;
+            border-left: 4px solid var(--gold);
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .vernissage-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .vernissage-box {
+                padding: 2rem;
+            }
+        }
+
+        /* Artistes */
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .artist-card {
+            background-color: var(--bg-card);
+            border: 1px solid #1a1a1a;
+            transition: transform var(--transition-speed), border-color var(--transition-speed);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: opacity var(--transition-speed);
+        }
+
+        .artist-card:hover .carousel-item img {
+            opacity: 1;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            pointer-events: none;
+        }
+
+        .btn-car {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            transition: all var(--transition-speed);
+        }
+
+        .btn-car:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .artist-info {
+            padding: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .artist-title {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .artist-desc {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-top: 1rem;
+        }
+
+        /* Programme Timeline */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: rgba(212, 175, 55, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 6px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            border: 3px solid var(--gold);
+        }
+
+        .time-box {
+            margin-bottom: 1rem;
+        }
+
+        .time {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 2rem;
+            border: 1px solid #1a1a1a;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+        }
+
+        .closing-box {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid #222;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1.2rem 3rem;
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-speed);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold);
+            color: #000;
+        }
+
+        /* Contact & Footer */
+        .contact-wrapper {
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0 4rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            font-size: 1.5rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            transition: color var(--transition-speed);
+        }
+
+        .contact-link:hover {
+            color: var(--gold-hover);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            filter: grayscale(100%) invert(92%) hue-rotate(180deg);
+            margin-bottom: 3rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            border-top: 1px solid #1a1a1a;
+            background-color: #000;
+        }
+
+        .signature {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Bannière de Cookies */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            border-top: 2px solid var(--gold);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9999;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 800px;
+        }
+
+        .cookie-content p {
+            font-size: 0.95rem;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-cookie {
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all var(--transition-speed);
+        }
+
+        .btn-cookie.accept {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .btn-cookie:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 900px) {
+            #cookie-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bannière de Cookies (nLPD/RGPD) -->
+    <div id="cookie-banner">
+        <div class="cookie-content">
+            <p>Ce site utilise des cookies analytiques pour nous aider à améliorer votre expérience de navigation et mesurer notre audience de manière anonyme.</p>
+            <span class="lang-de">Diese Website verwendet Analyse-Cookies, um Ihre Surferfahrung zu verbessern und unsere Reichweite anonym zu messen.</span>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn-cookie" onclick="refuseCookies()">Refuser</button>
+            <button class="btn-cookie accept" onclick="acceptCookies()">Accepter</button>
+        </div>
+    </div>
+
+    <!-- En-tête / Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-text">R.V.</a>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#vernissage">Vernissage</a></li>
+                    <li><a href="#artistes">Artistes</a></li>
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <img src="logo.png" alt="Logo Résonances du Vivant" class="hero-logo" onerror="this.style.display='none';">
+        <h1 class="playfair">RÉSONANCES DU VIVANT</h1>
+        <div class="lang-de" style="font-size: 1.1rem; margin-top:0;">Von der greifbaren Welt zum Unsichtbaren</div>
+        
+        <p class="subtitle">Du monde tangible à l'invisible</p>
+
+        <div class="badge">
+            ENTRÉE LIBRE
+            <span class="lang-de" style="margin-top:0.3rem;">Freier Eintritt</span>
+        </div>
+
+        <div class="hero-info">
+            <p><strong>19 juin — 5 juillet 2026</strong></p>
+            <p>GALERIE DE GRANDCOUR, Rue du Reinz 11, 1543 Grandcour</p>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?text=D%C3%A9couvrez%20l%27exposition%20%22R%C3%A9sonances%20du%20Vivant%22%20%C3%A0%20la%20Galerie%20de%20Grandcour%20du%2019%20juin%20au%205%20juillet%202026.%20Plus%20d%27infos%20sur%20https%3A%2F%2Fwww.resonancesduvivant.ch%2F" 
+           target="_blank" 
+           class="btn-whatsapp" 
+           onclick="trackWhatsAppShare()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.031 0C5.385 0 0 5.385 0 12.031C0 14.675 0.852 17.135 2.273 19.14L0.742 24L5.753 22.477C7.659 23.692 9.771 24.316 12.031 24.316C18.677 24.316 24.062 18.931 24.062 12.285C24.062 5.639 18.677 0 12.031 0ZM18.734 16.969C18.455 17.755 17.337 18.423 16.486 18.595C15.862 18.724 15.025 18.831 11.975 17.564C8.303 16.039 5.92 12.3 5.748 12.064C5.576 11.828 4.309 10.133 4.309 8.393C4.309 6.653 5.189 5.816 5.554 5.429C5.855 5.107 6.349 4.978 6.8 4.978C6.95 4.978 7.079 4.978 7.208 4.999C7.53 5.021 7.681 5.042 7.917 5.601C8.218 6.331 8.948 8.114 9.034 8.286C9.12 8.458 9.249 8.672 9.142 8.887C9.034 9.102 8.948 9.209 8.798 9.381C8.648 9.553 8.476 9.682 8.347 9.854C8.197 10.047 8.025 10.24 8.218 10.584C8.412 10.928 9.034 11.959 9.958 12.775C11.14 13.827 12.106 14.15 12.493 14.301C12.879 14.451 13.094 14.43 13.33 14.193C13.566 13.957 14.232 13.141 14.533 12.733C14.834 12.325 15.113 12.389 15.457 12.518C15.801 12.647 17.627 13.549 17.928 13.7C18.229 13.85 18.423 13.915 18.509 14.065C18.595 14.215 18.595 14.967 18.316 15.761H18.734Z" />
+            </svg>
+            Inviter un ami via WhatsApp
+        </a>
+    </section>
+
+    <!-- Vernissage Section -->
+    <section id="vernissage" class="section-dark">
+        <div class="section-header">
+            <h2 class="section-title">Vernissage Immersif</h2>
+            <div class="lang-de" style="font-size: 1.1rem; text-align:center;">Immersive Vernissage</div>
+        </div>
+        <div class="vernissage-box">
+            <p>Vendredi 19.06.2026 dès 17h00. Ouverture de la galerie & présence des artistes : de 16h00 à 18h00 les week-ends des 20-21 juin, 27-28 juin et 4-5 juillet 2026.</p>
+            <span class="lang-de">Freitag, 19.06.2026 ab 17:00 Uhr. Öffnung der Galerie & Anwesenheit der Künstler: von 16:00 bis 18:00 Uhr an den Wochenenden vom 20.-21. Juni, 27.-28. Juni und 4.-5. Juli 2026.</span>
+        </div>
+    </section>
+
+    <!-- Artistes Section -->
+    <section id="artistes">
+        <div class="section-header">
+            <h2 class="section-title">Les Escales Artistiques</h2>
+            <div class="lang-de" style="font-size: 1.1rem; text-align:center;">Die künstlerischen Zwischenstopps</div>
+        </div>
+
+        <div class="artist-grid">
+            <!-- Ueli Affolter -->
+            <div class="artist-card" onclick="trackArtistClick('ueli')">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item"><img src="ueli_1.jpg" alt="Œuvre Ueli 1" onerror="this.style.display='none';"></div>
+                        <div class="carousel-item"><img src="ueli_2.jpg" alt="Œuvre Ueli 2" onerror="this.style.display='none';"></div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="btn-car btn-prev">❮</button>
+                        <button class="btn-car btn-next">❯</button>
+                    </div>
+                </div>
+                <div class="artist-info">
+                    <h3 class="artist-title playfair">Escale 1 : L'Ancrage et la Terre</h3>
+                    <div class="lang-de">Escale 1: Die Verankerung und die Erde | Ueli Affolter (Gastgeber-Galerist)</div>
+                    <p class="artist-desc">Paysages minutieux, peintures animalières et précieux carnets de voyage.</p>
+                    <div class="lang-de">Thema: Detaillierte Landschaften, Tiermalereien und kostbare Reisetagebücher.</div>
+                </div>
+            </div>
+
+            <!-- Alain Mouret -->
+            <div class="artist-card" onclick="trackArtistClick('alain')">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item"><img src="alain_1.jpg" alt="Œuvre Alain 1" onerror="this.style.display='none';"></div>
+                        <div class="carousel-item"><img src="alain_2.jpg" alt="Œuvre Alain 2" onerror="this.style.display='none';"></div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="btn-car btn-prev">❮</button>
+                        <button class="btn-car btn-next">❯</button>
+                    </div>
+                </div>
+                <div class="artist-info">
+                    <h3 class="artist-title playfair">Le Trait</h3>
+                    <div class="lang-de">Thema: Der Strich</div>
+                    <p class="artist-desc">Dessin, trait, poésie académique.</p>
+                    <div class="lang-de">Zeichnung, Strich, akademische Poesie.</div>
+                </div>
+            </div>
+
+            <!-- Sonja Fasel -->
+            <div class="artist-card" onclick="trackArtistClick('sonja')">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item"><img src="sonja_1.jpg" alt="Œuvre Sonja 1" onerror="this.style.display='none';"></div>
+                        <div class="carousel-item"><img src="sonja_2.jpg" alt="Œuvre Sonja 2" onerror="this.style.display='none';"></div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="btn-car btn-prev">❮</button>
+                        <button class="btn-car btn-next">❯</button>
+                    </div>
+                </div>
+                <div class="artist-info">
+                    <h3 class="artist-title playfair">Escale 2 : Le Mouvement et l'Émotion</h3>
+                    <div class="lang-de">Escale 2: Bewegung und Emotion</div>
+                    <p class="artist-desc">Laisser parler les couleurs</p>
+                    <div class="lang-de">Farben erzählen lassen.</div>
+                </div>
+            </div>
+
+            <!-- Alison Rikunali -->
+            <div class="artist-card" onclick="trackArtistClick('alison')">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item"><img src="alison_1.jpg" alt="Œuvre Alison 1" onerror="this.style.display='none';"></div>
+                        <div class="carousel-item"><img src="alison_2.jpg" alt="Œuvre Alison 2" onerror="this.style.display='none';"></div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="btn-car btn-prev">❮</button>
+                        <button class="btn-car btn-next">❯</button>
+                    </div>
+                </div>
+                <div class="artist-info">
+                    <h3 class="artist-title playfair">Escale 3 : Le Sanctuaire et l'Invisible</h3>
+                    <div class="lang-de">Escale 3: Das Heiligtum und das Unsichtbare</div>
+                    <p class="artist-desc">Artivisme et toiles fluorescentes s'illuminant sous lumière noire.</p>
+                    <div class="lang-de">Artivismus und fluoreszierende Gemälde, die unter Schwarzlicht leuchten.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section id="programme" class="section-dark">
+        <div class="section-header">
+            <h2 class="section-title">Programme : Le Voyage Immersif</h2>
+            <div class="lang-de" style="font-size: 1.1rem; text-align:center;">Programm: Die immersive Reise</div>
+        </div>
+
+        <div class="timeline">
+            <!-- Étape 1 -->
+            <div class="timeline-item">
+                <div class="time-box">
+                    <span class="time">17h00</span>
+                </div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title playfair">Accueil & Dégustation locale</h3>
+                    <div class="lang-de">Empfang & Lokale Degustation</div>
+                    <p class="timeline-desc">Ueli Affolter : Accueil & carnets de voyage.</p>
+                    <div class="lang-de">Ueli Affolter: Empfang & Reisetagebücher.</div>
+                </div>
+            </div>
+
+            <!-- Étape 2 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title playfair">Expérience Résonances</h3>
+                    <div class="lang-de">Resonanz-Erfahrung</div>
+                    <p class="timeline-desc">Alain Mouret : Démonstration de dessin en direct / Sonja Fasel : Échanges poétiques.</p>
+                    <div class="lang-de">Alain Mouret: Live-Zeichnung / Sonja Fasel: Poetischer Austausch.</div>
+                </div>
+            </div>
+
+            <!-- Étape 3 -->
+            <div class="timeline-item">
+                <div class="time-box">
+                    <span class="time">18h30</span>
+                </div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title playfair">Immersion Lumineuse</h3>
+                    <div class="lang-de">Licht-Immersion um 18:30 Uhr</div>
+                    <p class="timeline-desc">Alison Rikunali : Immersion vibratoire & lumière noire.</p>
+                    <div class="lang-de">Alison Rikunali: Vibratorische Immersion & Schwarzlicht.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="closing-box">
+            <p style="font-size: 1.2rem;">Un apéritif de bienvenue sera chaleureusement proposé pour clôturer la présentation.</p>
+            <span class="lang-de">Ein Willkommens-Aperitif wird Ihnen zum Abschluss der Präsentation herzlich angeboten.</span>
+            
+            <a href="programme.pdf" target="_blank" class="btn-gold" onclick="trackPDFDownload()">Télécharger le programme</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+            <div class="lang-de" style="font-size: 1.1rem; text-align:center;">Kontakt</div>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-links">
+                <div>
+                    <a href="tel:0788238950" class="contact-link">078 823 89 50</a>
+                    <div class="lang-de">Telefon</div>
+                </div>
+                <div>
+                    <a href="mailto:contact@resonancesduvivant.ch" class="contact-link">contact@resonancesduvivant.ch</a>
+                    <div class="lang-de">E-Mail</div>
+                </div>
+            </div>
+
+            <p style="font-size: 1.2rem;">Galerie de Grandcour<br>Rue du Reinz 11, 1543 Grandcour</p>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.587399878198!2d6.9238382!3d46.8714081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478deee7754ba635%3A0xe2128b9d3e85e2b8!2sRue%20du%20Reinz%2011%2C%201543%20Grandcour!5e0!3m2!1sfr!2sch!4v1716301234567!5m2!1sfr!2sch" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="signature">Design et stratégie digitale créés par l'agence Clicom.</p>
+        <span class="lang-de" style="display:inline-block; margin-top:0.5rem;">Design und digitale Strategie von der Agentur Clicom erstellt.</span>
+    </footer>
+
+    <!-- Scripts Intégrés -->
+    <script>
+        // -----------------------------------------------------
+        // 1. GESTION DU CONSENTEMENT (COOKIES)
+        // -----------------------------------------------------
+        function acceptCookies() {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            
+            // Événements immédiats post-consentement
+            gtag('event', 'cookie_accepted');
+            gtag('event', 'page_view');
+        }
+
+        function refuseCookies() {
+            localStorage.setItem('cookie_consent', 'refused');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        // Affichage de la bannière si aucun choix n'a été fait
+        document.addEventListener('DOMContentLoaded', function() {
+            const consentState = localStorage.getItem('cookie_consent');
+            if (!consentState) {
+                setTimeout(() => {
+                    document.getElementById('cookie-banner').classList.add('show');
+                }, 1000);
+            } else if (consentState === 'accepted') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        });
+
+        // -----------------------------------------------------
+        // 2. SCRIPTS DE TRACKING D'ENGAGEMENT NATIFS GA4
+        // -----------------------------------------------------
+
+        function trackWhatsAppShare() {
+            gtag('event', 'share_whatsapp', {
+                'method': 'WhatsApp',
+                'content_type': 'invitation'
+            });
+        }
+
+        function trackPDFDownload() {
+            gtag('event', 'download_pdf', {
+                'file_name': 'programme.pdf'
+            });
+        }
+
+        function trackArtistClick(artistName) {
+            gtag('event', 'view_artist_' + artistName, {
+                'artist_name': artistName
+            });
+        }
+
+        // Suivi automatique du défilement (Scroll Depth)
+        let scrolled50 = false;
+        let scrolled90 = false;
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+            let docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+            let winHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            if(docHeight <= winHeight) return; // Pas de défilement possible
+            
+            let scrollPercent = scrollTop / (docHeight - winHeight);
+            
+            if (scrollPercent >= 0.5 && !scrolled50) {
+                gtag('event', 'scroll_depth', { 'depth_percentage': '50%' });
+                scrolled50 = true;
+            }
+            if (scrollPercent >= 0.9 && !scrolled90) {
+                gtag('event', 'scroll_depth', { 'depth_percentage': '90%' });
+                scrolled90 = true;
+            }
+        });
+
+        // -----------------------------------------------------
+        // 3. LOGIQUE GLOBALE DES CARROUSELS D'IMAGES
+        // -----------------------------------------------------
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousels = document.querySelectorAll('.carousel');
+            
+            carousels.forEach(carousel => {
+                const inner = carousel.querySelector('.carousel-inner');
+                const items = carousel.querySelectorAll('.carousel-item');
+                const btnPrev = carousel.querySelector('.btn-prev');
+                const btnNext = carousel.querySelector('.btn-next');
+                const totalSlides = items.length;
+                let currentSlide = 0;
+                let interval;
+
+                if(totalSlides === 0) return;
+
+                function showSlide(index) {
+                    if(index >= totalSlides) currentSlide = 0;
+                    else if(index < 0) currentSlide = totalSlides - 1;
+                    else currentSlide = index;
+                    
+                    inner.style.transform = `translateX(-${currentSlide * 100}%)`;
+                }
+
+                function startAutoPlay() {
+                    interval = setInterval(() => {
+                        showSlide(currentSlide + 1);
+                    }, 4000);
+                }
+
+                function resetAutoPlay() {
+                    clearInterval(interval);
+                    startAutoPlay();
+                }
+
+                btnPrev.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Évite de déclencher le trackArtistClick() en cliquant sur le bouton
+                    showSlide(currentSlide - 1);
+                    resetAutoPlay();
+                });
+
+                btnNext.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showSlide(currentSlide + 1);
+                    resetAutoPlay();
+                });
+
+                startAutoPlay();
+            });
+        });
+    </script>
+</body>
+</html>
