@@ -49,6 +49,20 @@ function trackArtistClick(artistId) {
     if(events[artistId]) gtag('event', events[artistId], { 'event_category': 'artist_interaction' });
 }
 
+function trackCampaign() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source');
+    const utmCampaign = urlParams.get('utm_campaign');
+
+    if (utmCampaign === 'expo_resonances_2026' && ['alain_mouret', 'sonja_fasel', 'alison_rikunali'].includes(utmSource)) {
+        gtag('event', 'campaign_visit', {
+            'event_category': 'acquisition',
+            'event_label': utmSource,
+            'campaign': utmCampaign
+        });
+    }
+}
+
 // --- 3. Scroll Depth Tracking ---
 let scrolled50 = false;
 let scrolled90 = false;
@@ -72,6 +86,7 @@ window.addEventListener('scroll', () => {
 // --- 4. Carousel Logic ---
 document.addEventListener('DOMContentLoaded', () => {
     checkConsent();
+    trackCampaign();
 
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
