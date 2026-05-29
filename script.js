@@ -1,11 +1,17 @@
 // --- 1. Consentement RGPD / GA4 ---
 function checkConsent() {
     const consent = localStorage.getItem('cookie_consent');
+    const banner = document.getElementById('cookie-banner');
+    
     if (consent === 'accepted') {
-        document.getElementById('cookie-banner').style.display = 'none';
+        banner.style.display = 'none';
         gtag('consent', 'update', { 'analytics_storage': 'granted' });
     } else if (consent === 'refused') {
-        document.getElementById('cookie-banner').style.display = 'none';
+        banner.style.display = 'none';
+    } else {
+        // Première visite : afficher la bannière
+        banner.style.display = 'flex';
+        banner.style.transform = 'translateY(0)';
     }
 }
 

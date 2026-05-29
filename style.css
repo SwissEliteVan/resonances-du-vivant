@@ -53,6 +53,8 @@ a:hover {
     margin: 0 auto;
     max-width: 100%;
     height: auto;
+    object-fit: contain;
+    object-position: center;
 }
 
 /* Navigation */
@@ -108,9 +110,11 @@ nav {
     margin-bottom: 2rem;
 }
 
-.logo-container img { 
-    max-width: 200px; 
+.logo-container img {
+    max-width: 200px;
     height: auto;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+    object-fit: contain;
 }
 
 h1 {
@@ -230,6 +234,7 @@ h2.section-title {
     object-fit: cover;
     object-position: center;
     display: block;
+    margin: 0 auto;
 }
 
 .carousel-btn {
