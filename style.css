@@ -97,7 +97,7 @@ nav {
     align-items: center;
     text-align: center;
     padding: 6rem 2rem 4rem;
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 1)), url('assets/images/exposition-art-grandcour-immersion.webp') center/cover no-repeat;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 1)), url('assets/images/hero-bg.webp') center/cover no-repeat;
 }
 
 .logo-container {
