@@ -1,0 +1,361 @@
+:root {
+    --bg-color: #0a0a0a;
+    --bg-section: #050505;
+    --bg-card: #121212;
+    --text-main: #f4f4f4;
+    --text-muted: #b0b0b0;
+    --gold: #d4af37;
+    --gold-hover: #f1cf5f;
+    --whatsapp: #25D366;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover { 
+    color: var(--gold); 
+}
+
+.lang-de {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* Classes utilitaires pour les images centrées */
+.img-centered {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.nav-container::-webkit-scrollbar { display: none; }
+
+.nav-link {
+    color: var(--text-main);
+    font-weight: 500;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+.nav-link:last-child { margin-right: 0; }
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 1)), url('assets/images/exposition-art-grandcour-immersion.webp') center/cover no-repeat;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.logo-container img { 
+    max-width: 200px; 
+    height: auto;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.event-details {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+}
+
+.badge-premium {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    padding: 10px 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--gold);
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--whatsapp);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn-whatsapp svg { width: 20px; height: 20px; margin-right: 10px; fill: currentColor; }
+
+/* Sections */
+section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+.bg-alt { background-color: var(--bg-section); max-width: 100%; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+h2.section-title {
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* Vernissage */
+.vernissage-content {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-muted);
+}
+
+/* Artistes & Carousel Optimisé SEO */
+.artistes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.artist-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--gold); 
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* La balise img SEO-friendly prend toute la place du slide */
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--gold);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    transition: background 0.3s ease;
+}
+.carousel-btn:hover { background: rgba(212, 175, 55, 0.3); }
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+.artist-info { padding: 2rem; flex-grow: 1; }
+.artist-info h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--gold); }
+.artist-info p { color: var(--text-muted); margin-bottom: 1rem; }
+
+/* Programme */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    border-left: 2px solid var(--gold);
+}
+
+.timeline-item { position: relative; margin-bottom: 3rem; }
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 2px solid var(--gold);
+}
+
+.timeline-time {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.timeline-content h4 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.timeline-content p { color: var(--text-muted); }
+.closure-block { text-align: center; margin-top: 4rem; font-style: italic; }
+
+.btn-download {
+    display: table;
+    margin: 3rem auto 0;
+    background-color: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 15px 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-download:hover { background-color: var(--gold); color: var(--bg-color); }
+
+/* Contact & Footer */
+.contact-info { text-align: center; margin-bottom: 3rem; font-size: 1.2rem; }
+.contact-info a { display: inline-block; margin: 0.5rem 1rem; color: var(--gold); }
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    filter: grayscale(100%) invert(92%) hue-rotate(180deg);
+    margin-bottom: 2rem;
+}
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Cookie Banner */
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-top: 2px solid var(--gold);
+    padding: 1.5rem 2rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease-in-out;
+}
+.cookie-text { text-align: center; margin-bottom: 1rem; font-size: 0.95rem; }
+.cookie-buttons { display: flex; gap: 1rem; }
+
+.btn-cookie {
+    padding: 10px 20px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.btn-cookie.accept { background: var(--gold); color: var(--bg-color); font-weight: 600; }
+.btn-cookie:hover { opacity: 0.8; }
+
+@media (min-width: 768px) {
+    #cookie-banner { flex-direction: row; text-align: left; }
+    .cookie-text { margin-bottom: 0; text-align: left; padding-right: 2rem; }
+}
