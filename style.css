@@ -83,6 +83,7 @@ nav {
     cursor: pointer;
     gap: 5px;
     z-index: 1001;
+    margin-left: auto;
 }
 
 .menu-toggle .bar {
@@ -436,6 +437,4 @@ footer {
 @media (min-width: 768px) {
     #cookie-banner { flex-direction: row; text-align: left; }
     .cookie-text { margin-bottom: 0; text-align: left; padding-right: 2rem; }
-}text { margin-bottom: 0; text-align: left; padding-right: 2rem; }
-}e-text { margin-bottom: 0; text-align: left; padding-right: 2rem; }
 }
