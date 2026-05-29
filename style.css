@@ -179,12 +179,13 @@ nav {
     align-items: center;
     width: 100%;
     margin-bottom: 2rem;
+    margin-top: -4rem; /* Remonte le logo */
 }
 
 .logo-container img {
-    max-width: 120px; /* Reduced by ~40% from 200px */
+    max-width: 80px; /* Taille réduite */
     height: auto;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.9)); /* Ombre plus prononcée pour plus de visibilité */
     object-fit: contain;
 }
 
@@ -313,7 +314,7 @@ h2.section-title {
     min-width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 15%; /* Recadre vers le haut pour éviter de couper les fronts (ex: photo d'Alain) */
     display: block;
     margin: 0 auto;
 }
